@@ -12,7 +12,7 @@
 Evaluates locale-specific plural rules to identify the right plural form for a cardinal number, which represents an item count. Internationalization libraries can utilize it to choose the right localized string.
 
 * Focused and complete - [nothing but the rule evaluation](./src/index.d.ts) is included, but still [supporting almost 150 languages](./docs/languages.md#supported-languages).
-* Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./design.md#locales).
+* Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./docs/design.md#locales).
 * Reliable and correct - written using the [Translate Project documentation] and the [Mozilla documentation].
 
 ### Table of Contents
@@ -66,7 +66,7 @@ Functions are exposed as named exports, for example:
 const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
 ```
 
-You can read more about the [module loading](./docs/API.md#loading) in other environments, like with ES6 or in web browsers. [Usage scenarios](./docs/usage.md#usage-scenarios) demonstrate applications of this library in typical real-world situations. [Design concepts](./docs/design.md#design-concepts) explain the approach to the correct internationalization of messages with cardinals taken by this library. Translators will read about [plural rules for supported languages](./languages.md#supported-languages) to be able to write the right plural forms to language packs. Finally, the [API reference](./docs/API.md#api-reference) lists all functions with a description of their functionality.
+You can read more about the [module loading](./docs/API.md#loading) in other environments, like with ES6 or in web browsers. [Usage scenarios](./docs/usage.md#usage-scenarios) demonstrate applications of this library in typical real-world situations. [Design concepts](./docs/design.md#design-concepts) explain the approach to the correct internationalization of messages with cardinals taken by this library. Translators will read about [plural rules for supported languages](./docs/languages.md#supported-languages) to be able to write the right plural forms to language packs. Finally, the [API reference](./docs/API.md#api-reference) lists all functions with a description of their functionality.
 
 ## Library Integrations
 
