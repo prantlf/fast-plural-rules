@@ -1,6 +1,6 @@
 {
   "name": "fast-plural-rules",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "Evaluates locale-specific plural rules to identify the right plural form for a cardinal number, which represents an item count.",
   "author": {
     "name": "Ferdinand Prantl",
