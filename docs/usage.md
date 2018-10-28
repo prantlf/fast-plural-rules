@@ -12,7 +12,7 @@ The minimal, but powerful API of this module provides functionality for finding 
 
 Translators need to know, how many plural forms the target language needs, to be able to add the proper number of strings to an array representing a localizable message. for example:
 
-```json
+```js
 // English language pack
 {
   "validationFailed": "File validation failed.",  // Simple message
