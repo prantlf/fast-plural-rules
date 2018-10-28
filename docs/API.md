@@ -42,9 +42,9 @@ You can also load a specific version from CDN, for example: https://unpkg.com/fa
 
 ## Functions
 
-Functions return either a [plural form](./docs/design.md#plural-forms) index or a [plural rule](./docs/design.md#plural-rules) and they accept either a locale, or a rule index from the [list of supported locales and plural rule indexes](./languages.md#supported-languages).
+Functions return either a [plural form](./docs/design.md#plural-forms) index or a [plural rule](./docs/design.md#plural-rules) and they accept either a [locale](./design.md#locales), or a rule index from the [list of supported locales and plural rule indexes](./languages.md#supported-languages).
 
-The locale is normalized for the plural rule lookup. It is always converted to lower-case and if it consists of two parts - language and country - separated by an underscore, the separator is replaced by a hyphen. For example: `pt_BR ==> pt-br`.
+The [locale](./design.md#locales) is normalized for the plural rule lookup. It is always converted to lower-case and if it consists of two parts - language and country - separated by an underscore, the separator is replaced by a hyphen. For example: `pt_BR ==> pt-br`.
 
 ### getPluralFormForCardinalByIndex
 
@@ -82,7 +82,7 @@ getPluralFormForCardinalByIndex('en', 5)
 // Returns 1, which is a second plural form (plural) in Germanic languages.
 ```
 
-The locale is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.
+The [locale](./design.md#locales) is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.
 
 ### getPluralRuleForCardinalsByIndex
 
@@ -124,4 +124,4 @@ pluralRule(5)
 // Returns 1, which is a second plural form (plural) in Germanic languages.
 ```
 
-The locale is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.
+The [locale](./design.md#locales) is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.

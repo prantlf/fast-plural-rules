@@ -12,7 +12,7 @@
 Evaluates locale-specific plural rules to identify the right plural form for a cardinal number, which represents an item count. Internationalization libraries can utilize it to choose the right localized string.
 
 * Focused and complete - [nothing but the rule evaluation](./src/index.d.ts) is included, but still [supporting almost 150 languages](./docs/languages.md#supported-languages).
-* Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms).
+* Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./design.md#locales).
 * Reliable and correct - written using the [Translate Project documentation] and the [Mozilla documentation].
 
 ### Table of Contents
