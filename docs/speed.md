@@ -5,10 +5,10 @@ Using [plain hand-coded functions](../src/cardinals.js) is faster, than parsing 
 ```txt
 $ node perf
 Getting a plural form...
-  using a simple coded rule x 202,430,029 ops/sec ±1.76% (74 runs sampled)
-  using a simple parsed rule x 4,269 ops/sec ±2.24% (78 runs sampled)
-  using an average coded rule x 8,674,399 ops/sec ±0.68% (83 runs sampled)
-  using an average parsed rule x 2,318 ops/sec ±1.45% (79 runs sampled)
-  using a complicated coded rule x 7,303,699 ops/sec ±0.93% (80 runs sampled)
-  using a complicated parsed rule x 1,607 ops/sec ±2.18% (78 runs sampled)
+  using a simple coded rule x 5,799,112 ops/sec ±0.52% (90 runs sampled)
+  using a simple parsed rule x 8,113 ops/sec ±1.25% (82 runs sampled)
+  using an average coded rule x 3,150,432 ops/sec ±0.43% (94 runs sampled)
+  using an average parsed rule x 4,333 ops/sec ±1.37% (90 runs sampled)
+  using a complicated coded rule x 2,800,479 ops/sec ±0.31% (95 runs sampled)
+  using a complicated parsed rule x 2,881 ops/sec ±1.03% (87 runs sampled)
 ```

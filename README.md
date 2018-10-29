@@ -2,7 +2,7 @@
 [![NPM version](https://badge.fury.io/js/fast-plural-rules.png)](http://badge.fury.io/js/fast-plural-rules)
 [![Build Status](https://travis-ci.org/prantlf/fast-plural-rules.png)](https://travis-ci.org/prantlf/fast-plural-rules)
 [![Coverage Status](https://coveralls.io/repos/github/prantlf/fast-plural-rules/badge.svg?branch=master)](https://coveralls.io/github/prantlf/fast-plural-rules?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f1034029c0747a980cd49f64f16338b)](https://www.codacy.com/app/prantlf/fast-plural-rules?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prantlf/fast-plural-rules&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/94ba20975c8b4feb8b8b280de2ffcb9b)](https://www.codacy.com/app/prantlf/fast-plural-rules?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prantlf/fast-plural-rules&amp;utm_campaign=Badge_Grade)
 [![Dependency Status](https://david-dm.org/prantlf/fast-plural-rules.svg)](https://david-dm.org/prantlf/fast-plural-rules)
 [![devDependency Status](https://david-dm.org/prantlf/fast-plural-rules/dev-status.svg)](https://david-dm.org/prantlf/fast-plural-rules#info=devDependencies)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)

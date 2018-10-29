@@ -1,6 +1,6 @@
 # API Reference
 
-This library contains pure, immutable functions to get [plural forms](./docs/design.md#plural-forms) and [plural rules](./docs/design.md#plural-rules) for a [supported locale](./languages.md#supported-languages).
+This library contains pure functions to get [plural forms](./design.md#plural-forms) and [plural rules](./design.md#plural-rules) for a [supported locale](./languages.md#supported-languages).
 
 ### Table of Contents
 
@@ -42,7 +42,7 @@ You can also load a specific version from CDN, for example: https://unpkg.com/fa
 
 ## Functions
 
-Functions return either a [plural form](./docs/design.md#plural-forms) index or a [plural rule](./docs/design.md#plural-rules) and they accept either a [locale](./design.md#locales), or a rule index from the [list of supported locales and plural rule indexes](./languages.md#supported-languages).
+Functions return either a [plural form](./design.md#plural-forms) index or a [plural rule](./design.md#plural-rules) and they accept either a [locale](./design.md#locales), or a rule index from the [list of supported locales and plural rule indexes](./languages.md#supported-languages).
 
 The [locale](./design.md#locales) is normalized for the plural rule lookup. It is always converted to lower-case and if it consists of two parts - language and country - separated by an underscore, the separator is replaced by a hyphen. For example: `pt_BR ==> pt-br`.
 
