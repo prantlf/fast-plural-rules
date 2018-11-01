@@ -32,6 +32,7 @@ Instead of writing grammar engines for formulating correct sequences, the proble
 Form 0: singular, for cardinal === 1
 Form 1: plural,   for cardinals !== 1
 ```
+
 Have a look at the [list of plural rules and number of plural forms for locales supported by this library](./languages.md#supported-languages).
 
 ## Plural Forms

@@ -43,18 +43,18 @@ Language packs usually contain localized expressions, which are looked up by the
 const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
 let locale
 
-localizePluralMessage('en', 'invalidFile', 1)
+localizePluralMessage('en', 'invalidFileCount', 1)
 // Returns "1 invalid file".
-localizePluralMessage('en', 'invalidFile', 2)
+localizePluralMessage('en', 'invalidFileCount', 2)
 // Returns "2 invalid files".
-localizePluralMessage('en', 'invalidFile', 5)
+localizePluralMessage('en', 'invalidFileCount', 5)
 // Returns "5 invalid files".
 
-localizePluralMessage('cs', 'invalidFile', 1)
+localizePluralMessage('cs', 'invalidFileCount', 1)
 // Returns "1 vadný soubor".
-localizePluralMessage('cs', 'invalidFile', 2)
+localizePluralMessage('cs', 'invalidFileCount', 2)
 // Returns "2 vadné soubory".
-localizePluralMessage('cs', 'invalidFile', 5)
+localizePluralMessage('cs', 'invalidFileCount', 5)
 // Returns "5 vadných souborů".
 
 // Finds the message with the right plural form using the specified locale,
@@ -101,20 +101,20 @@ const { getPluralRuleForCardinalsByLocale } = require('fast-plural-rules')
 
 setLocale('en')
 
-localizePluralMessage('invalidFile', 1)
+localizePluralMessage('invalidFileCount', 1)
 // Returns "1 invalid file".
-localizePluralMessage('invalidFile', 2)
+localizePluralMessage('invalidFileCount', 2)
 // Returns "2 invalid files".
-localizePluralMessage('invalidFile', 15)
+localizePluralMessage('invalidFileCount', 5)
 // Returns "5 invalid files".
 
 setLocale('cs')
 
-localizePluralMessage('invalidFile', 1)
+localizePluralMessage('invalidFileCount', 1)
 // Returns "1 vadný soubor".
-localizePluralMessage('invalidFile', 5)
+localizePluralMessage('invalidFileCount', 2)
 // Returns "2 vadné soubory".
-localizePluralMessage('invalidFile', 5)
+localizePluralMessage('invalidFileCount', 5)
 // Returns "5 vadných souborů".
 
 // Control the localization methods, when a locale is set.

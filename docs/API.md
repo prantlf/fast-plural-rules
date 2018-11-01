@@ -67,7 +67,7 @@ getPluralFormForCardinalByIndex(1, 5)
 ### getPluralFormForCardinalByLocale
 
 ```
-getPluralFormForCardinalByIndex(locale: string, count: number): number
+getPluralFormForCardinalByLocale(locale: string, count: number): number
 ```
 
 Returns an index of the plural form using the specified `locale` and the specified cardinal - `count`.
@@ -90,7 +90,7 @@ The [locale](./design.md#locales) is normalized for the plural rule lookup by co
 getPluralRuleForCardinalsByIndex(index: number): Function
 ```
 
-Returns an plural form rule function for the specified plural rule `index`. The function can be called later with a cardinal (item count) to return the right index plural form index for the cardinal.
+Returns an plural form rule function for the specified plural rule `index`. The function can be called later with a cardinal (item count) to return the right plural form index for the cardinal.
 
 * `index` - one of [supported plural rule indexes](./languages.md#supported-languages)
 
