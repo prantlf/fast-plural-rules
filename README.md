@@ -15,6 +15,8 @@ Evaluates locale-specific plural rules to identify the right plural form for a c
 * Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./docs/design.md#locales).
 * Reliable and correct - written using the [Translate Project documentation] and the [Mozilla documentation].
 
+If you are looking for a library using the official and regularly updated [CLDR plural rules], only just a little bigger, see [plural-rules].
+
 ### Table of Contents
 
 - [Synopsis](#synopsis)
@@ -93,3 +95,5 @@ Licensed under the MIT license.
 [Mozilla documentation]: https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals#List_of_Plural_Rules
 [Extended Day.js]: https://github.com/prantlf/dayjs
 [relativeTime plugin]: https://github.com/prantlf/dayjs/blob/combined/docs/en/Plugin.md#relativetime
+[CLDR plural rules]: http://cldr.unicode.org/index/cldr-spec/plural-rules
+[plural-rules]: https://github.com/prantlf/plural-rules
