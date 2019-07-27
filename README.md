@@ -13,9 +13,10 @@ Evaluates locale-specific plural rules to identify the right plural form for a c
 
 * Focused and complete - [nothing but the rule evaluation](./src/index.d.ts) is included, but still [supporting almost 150 languages](./docs/languages.md#supported-languages).
 * Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./docs/design.md#locales).
-* Reliable and correct - written using the [Translate Project documentation] and the [Mozilla documentation].
+* Standard and documented - written using the [Translate Project documentation] and the [Mozilla documentation].
+* Reliable and correct - contains the full test suite comparing the actual results with the Mozilla specification.
 
-If you are looking for a library using the official and regularly updated [CLDR plural rules], only just a little bigger, see [plural-rules].
+If you are looking for a library using the regularly updated [CLDR plural rules], only just a little bigger, see [plural-rules].
 
 ### Table of Contents
 
@@ -43,11 +44,33 @@ getPluralFormForCardinalByLocale('cs', 1) // Returns 0; "1 soubor"
 getPluralFormForCardinalByLocale('cs', 2) // Returns 1; "2 soubory"
 getPluralFormForCardinalByLocale('cs', 5) // Returns 2; "5 souborů"
 
-// English: 0 - singular
-//          1 - plural
-// Czech:   0 - singular
-//          1 - plural for 2-4 items
-//          2 - plural for 5+ items
+// Returns a localized message for the specified locale and cardinal.
+getMessage('en', 'fileCount', 3) // Returns "3 files"
+getMessage('cs', 'fileCount', 3) // Returns "3 soubory"
+
+// Returns a localized message for the specified locale and cardinal.
+function getMessage (locale, messageKey, cardinal) {
+  const pluralForm = getPluralFormForCardinalByLocale(locale, cardinal)
+  const messageFormat = messages[locale][messageKey][pluralForm]
+  return messageFormat.replace('{0}', cardinal)
+}
+
+// A language pack with a testing message.
+const messages = {
+  en: {
+    fileCount: [
+      "{0} file", // 0 - singular
+      "{0} files" // 1 - plural
+    ],
+  }
+  cs: {
+    fileCount: [
+      "{0} soubor",  // 0 - singular
+      "{0} soubory", // 1 - plural for 2-4 items
+      "{0} souborů"  // 2 - plural for 5+ items
+    ]
+  }
+}
 ```
 
 ## Installation and Getting Started
@@ -80,6 +103,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+* 2019-07-27   v1.0.0   Correct rules for Baltic, Celtic, Semitic, Shuar and Welsh
+                        language families to match the latest Mozilla documentation, complete the test suite
 * 2018-10-28   v0.0.1   Initial release
 
 ## License

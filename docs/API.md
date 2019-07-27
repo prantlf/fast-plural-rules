@@ -110,7 +110,7 @@ pluralRule(5)
 getPluralRuleForCardinalsByLocale(locale: string): Function
 ```
 
-Returns an plural form rule function for the specified `locale`. The function can be called later with a cardinal (item count) to return the right index plural form index for the cardinal.
+Returns an plural form rule function for the specified `locale`. The function can be called later with a cardinal (item count) to return the right index plural form index for the cardinal. If you call `getPluralFormForCardinalByLocale` many times for the same locale, consider obtaining a rule function for the specific locale by `getPluralRuleForCardinalsByLocale` and call that function repeatedly.
 
 * `locale` - one of [supported language locales](./languages.md#supported-languages)
 
