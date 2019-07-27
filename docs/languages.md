@@ -2,9 +2,9 @@
 
 Find your language below and learn, how many plural forms will be needed in localized messages with cardinals and what rules will decide the right plural form.
 
-```txt
-Plural rule #0 (1 form)
+## Plural rule #0 (1 form)
 
+```txt
   Families: Asian (Chinese, Japanese, Korean), Persian,
     Turkic/Altaic (Turkish), Thai, Lao
   Locales: ay (Aymará), bo (Tibetan), cgg (Chiga), dz (Dzongkha),
@@ -15,9 +15,11 @@ Plural rule #0 (1 form)
   everything: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
   18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
   36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, ...
+```
 
-Plural rule #1 (2 forms)
+## Plural rule #1 (2 forms)
 
+```txt
   Families: Germanic (Danish, Dutch, English, Faroese, Frisian, German,
     Norwegian, Swedish), Finno-Ugric (Estonian, Finnish, Hungarian), Language
     isolate (Basque), Latin/Greek (Greek), Semitic (Hebrew), Romanic (Italian,
@@ -46,9 +48,11 @@ Plural rule #1 (2 forms)
   everything else: 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
   17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
   35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, ...
+```
 
-Plural rule #2 (2 forms)
+## Plural rule #2 (2 forms)
 
+```txt
   Families: Romanic (French, Brazilian Portuguese)
   is 0 or 1: 0, 1
   Locales: ach (Acholi), ak (Akan), am (Amharic), arn (Mapudungun),
@@ -59,9 +63,11 @@ Plural rule #2 (2 forms)
   everything else: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
   18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
   36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
+```
 
-Plural rule #3 (3 forms)
+## Plural rule #3 (3 forms)
 
+```txt
   Families: Baltic (Latvian, Latgalian)
   Locales: lv (Latvian)
   ends in 0: 0
@@ -71,9 +77,11 @@ Plural rule #3 (3 forms)
   everything else: 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18,
   19, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34, 35, 36, 37, 38, 39, 42,
   43, 44, 45, 46, 47, 48, 49, 52, 53, ...
+```
 
-Plural rule #4 (4 forms)
+## Plural rule #4 (4 forms)
 
+```txt
   Families: Celtic (Scottish Gaelic)
   Locales: gd (Scottish Gaelic)
   is 1 or 11: 1, 11
@@ -82,9 +90,11 @@ Plural rule #4 (4 forms)
   everything else: 0, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32,
   33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
   51, ...
+```
 
-Plural rule #5 (3 forms)
+## Plural rule #5 (3 forms)
 
+```txt
   Families: Romanic (Romanian)
   Locales: ro (Romanian)
   is 1: 1
@@ -95,9 +105,11 @@ Plural rule #5 (3 forms)
   everything else: 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
   34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
   52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, ...
+```
 
-Plural rule #6 (3 forms)
+## Plural rule #6 (3 forms)
 
+```txt
   Families: Baltic (Lithuanian)
   Locales: lt (Lithuanian)
   ends in 1, excluding 11: 1, 21, 31, 41, 51, 61, 71, 81, 91, 101, 121, 131,
@@ -110,9 +122,11 @@ Plural rule #6 (3 forms)
   everything else: 2, 3, 4, 5, 6, 7, 8, 9, 22, 23, 24, 25, 26, 27, 28, 29,
   32, 33, 34, 35, 36, 37, 38, 39, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53,
   54, 55, 56, 57, 58, 59, 62, 63, 64, 65, 66, 67, 68, 69, 72, 73, ...
+```
 
-Plural rule #7 (3 forms)
+## Plural rule #7 (3 forms)
 
+```txt
   Families: Slavic (Belarusian, Bosnian, Croatian, Serbian, Russian,  Ukrainian)
   Locales: be (Belarusian), bs (Bosnian), hr (Croatian), ru (Russian),
     sr (Serbian), uk (Ukrainian)
@@ -127,9 +141,11 @@ Plural rule #7 (3 forms)
   20, 25, 26, 27, 28, 29, 30, 35, 36, 37, 38, 39, 40, 45, 46, 47, 48, 49,
   50, 55, 56, 57, 58, 59, 60, 65, 66, 67, 68, 69, 70, 75, 76, 77, ..., 112,
   113, ..., 212, 213, ...
+```
 
-Plural rule #8 (3 forms)
+## Plural rule #8 (3 forms)
 
+```txt
   Families: Slavic (Slovak, Czech)
   Locales: cs (Czech), sk (Slovak)
   is 1: 1
@@ -137,9 +153,11 @@ Plural rule #8 (3 forms)
   everything else: 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
   38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, ...
+```
 
-Plural rule #9 (3 forms)
+## Plural rule #9 (3 forms)
 
+```txt
   Families: Slavic (Polish)
   Locales: pl (Polish)
   is 1: 1
@@ -150,9 +168,11 @@ Plural rule #9 (3 forms)
   everything else: 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   20, 21, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37, 38, 39, 40, 41, 45, 46,
   47, 48, 49, 50, 51, 55, 56, 57, 58, 59, 60, 61, 65, 66, 67, 68, ...
+```
 
-Plural rule #10 (4 forms)
+## Plural rule #10 (4 forms)
 
+```txt
   Families: Slavic (Slovenian, Sorbian)
   Locales: sl (Slovenian)
   ends in 01: 1, 101, 201, ...
@@ -161,9 +181,11 @@ Plural rule #10 (4 forms)
   everything else: 0, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
   38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, ...
+```
 
-Plural rule #11 (5 forms)
+## Plural rule #11 (5 forms)
 
+```txt
   Families: Celtic (Irish Gaelic)
   Locales: ga (Irish)
   is 1: 1
@@ -173,9 +195,11 @@ Plural rule #11 (5 forms)
   everything else: 0, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
   24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
   42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, ...
+```
 
-Plural rule #12 (6 forms)
+## Plural rule #12 (6 forms)
 
+```txt
   Families: Semitic (Arabic)
   Locales: ar (Arabic)
   is 1: 1
@@ -188,9 +212,11 @@ Plural rule #12 (6 forms)
   51, 52, 53, 54, 55, 56, 57, 58, 59, 60, ...
   ends in 00-02, excluding 0-2: 100, 101, 102, 200, 201, 202, ...
   is 0: 0
+```
 
-Plural rule #13 (4 forms)
+## Plural rule #13 (4 forms)
 
+```txt
   Families: Semitic (Maltese)
   Locales: mt (Maltese)
   is 1: 1
@@ -202,9 +228,11 @@ Plural rule #13 (4 forms)
   everything else: 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
   34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
   52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, ...
+```
 
-Plural rule #14 (3 forms)
+## Plural rule #14 (3 forms)
 
+```txt
   Families: unused
   ends in 1: 1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141,
   151, 161, 171, 181, 191, 201, 211, 221, 231, 241, 251, 261, 271, 281, 291,
@@ -215,9 +243,11 @@ Plural rule #14 (3 forms)
   everything else: 0, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19,
   20, 23, 24, 25, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 38, 39, 40, 43,
   44, 45, 46, 47, 48, 49, 50, 53, 54, 55, 56, 57, 58, 59, 60, 63, ...
+```
 
-Plural rule #15 (2 forms)
+## Plural rule #15 (2 forms)
 
+```txt
   Families: Icelandic, Macedonian
   Locales: is (Icelandic), mk (Macedonian)
   ends in 1, excluding 11: 1, 21, 31, 41, 51, 61, 71, 81, 91, 101, 121, 131,
@@ -226,9 +256,11 @@ Plural rule #15 (2 forms)
   everything else: 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
   17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36,
   37, 38, 39, 40, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 53, 54, ...
+```
 
-Plural rule #16 (5 forms)
+## Plural rule #16 (5 forms)
 
+```txt
   Families: Celtic (Breton)
   ends in 1, excluding 11, 71, 91: 21, 31, 41, 51, 61, 81, 101, 121, 131,
   141, 151, 161, 181, 201, 221, 231, 241, 251, 261, 281, ...
@@ -240,18 +272,22 @@ Plural rule #16 (5 forms)
   6000000, 7000000, 8000000, 9000000, 10000000, ...
   everything else: 0, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   20, 25, 26, 27, 28, 30, 35, 36, 37, 38, 40, ...
+```
 
-Plural rule #17 (2 forms)
+## Plural rule #17 (2 forms)
 
+```txt
   Families: Ecuador indigenous languages (Shuar)
   Locales: jv (Javanese)
   is 0: 0
   everything else: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
   17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
   35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
+```
 
-Plural rule #18 (6 forms)
+## Plural rule #18 (6 forms)
 
+```txt
   Families: Welsh
   Locales: cy (Welsh)
   is 0: 0
@@ -262,9 +298,11 @@ Plural rule #18 (6 forms)
   everything else: 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
   38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
+```
 
-Plural rule #19 (3 forms)
+## Plural rule #19 (3 forms)
 
+```txt
   Locales: csb (Kashubian)
   is 1: 1
   ends in 2-4, excluding 12-14: 2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44,
@@ -275,9 +313,11 @@ Plural rule #19 (3 forms)
   20, 21, 25, 26, 27, 28, 29, 30, 31, 35, 36, 37, 38, 39, 40, 41, 45, 46,
   47, 48, 49, 50, 51, 55, 56, 57, 58, 59, 60, 61, 65, 66, 67, 68, 69, 70,
   71, 75, 76, 77, ..., 111, 115, ..., 211, 215, ...
+```
 
-Plural rule #20 (4 forms)
+## Plural rule #20 (4 forms)
 
+```txt
   Locales: kw (Cornish)
   is 1: 1
   is 2: 2
@@ -285,9 +325,11 @@ Plural rule #20 (4 forms)
   everything else: 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
   20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
   38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
+```
 
-Plural rule #21 (3 forms)
+## Plural rule #21 (3 forms)
 
+```txt
   Locales: me (Montenegro)
   ends in 1, excluding 11: 1, 21, 31, 41, 51, 61, 71, 81, 91, 101, 121, 131,
   141, 151, 161, 171, 181, 191, 201, 221, 231, 241, 251, 261, 271, 281, 291,
@@ -300,9 +342,11 @@ Plural rule #21 (3 forms)
   20, 25, 26, 27, 28, 29, 30, 35, 36, 37, 38, 39, 40, 45, 46, 47, 48, 49,
   50, 55, 56, 57, 58, 59, 60, 65, 66, 67, 68, 69, 70, 75, 76, 77, ..., 112,
   113, ..., 212, 213, ...
+```
 
-Plural rule #22 (3 forms)
+## Plural rule #22 (3 forms)
 
+```txt
   Locales: mnk (Mandinka)
   is 0: 0
   is 1: 1
