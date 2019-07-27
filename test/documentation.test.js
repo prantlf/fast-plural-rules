@@ -13,7 +13,7 @@ it('rules are numbered ascending', () => {
     const match = /#(\d+)/.exec(description.name)
     expect(match).toBeTruthy()
     const ruleIndex = +match[1]
-    expect(ruleIndex).toEqual(index)
+    expect(ruleIndex, description.name).toEqual(index)
   })
 })
 
@@ -22,8 +22,24 @@ it('form count matches the note in the rule title', () => {
     const match = /\((\d+) form(?:s)?\)/.exec(description.name)
     expect(match).toBeTruthy()
     const formCount = +match[1]
-    expect(Object.keys(description.forms).length).toEqual(formCount)
+    expect(Object.keys(description.forms).length, description.name).toEqual(formCount)
   })
+})
+
+it('locales are assigned to distinct rules', () => {
+  var referredLocales = {}
+  descriptions
+    .filter(description => description.locales)
+    .forEach(description => {
+      description.locales
+        .replace(/ \([^)]+\)/g, '')
+        .split(', ')
+        .forEach(locale => {
+          expect(referredLocales[locale],
+            `${description.name} - locale "${locale}"`).toBeFalsy()
+          referredLocales[locale] = true
+        })
+    })
 })
 
 function comparePluralRules (descriptions, comments) {

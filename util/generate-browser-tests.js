@@ -11,8 +11,7 @@ rimraf = promisify(rimraf)
 const tests = join(__dirname, '../test')
 const browserTests = join(tests, 'browser')
 const nonBrowserTests = [
-  'browser.test.js', 'documentation.test.js',
-  'rulesByLocale.test.js', 'typings.test.js'
+  'browser.test.js', 'documentation.test.js', 'typings.test.js'
 ]
 const importModuleExpression = /import ((?:{[^}]+})|(?:\w+)) from '..\/src\/([^']+)'/
 const importDataExpression = /import descriptions from '.\/plural-rule-definitions.json'/
