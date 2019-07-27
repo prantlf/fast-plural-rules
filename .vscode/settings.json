@@ -7,6 +7,8 @@
     "**/src/lookup/data*.js": true,
     "**/dist/**": true,
     "**/test/browser/**": true,
+    "**/test/cardinals.umd.js": true,
+    "**/test/plural-rule-definitions.js*": true,
     "**/test/typings.test.js": true
   }
 }

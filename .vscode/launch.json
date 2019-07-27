@@ -7,12 +7,27 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Test",
+      "name": "All Tests",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
         "-i",
         "--testPathIgnorePatterns",
         "browser.test.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": [
+        "<node_internals>/**/*.js"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test documentation",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "-i",
+        "--testPathPattern",
+        "documentation.test.js"
       ],
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": [
