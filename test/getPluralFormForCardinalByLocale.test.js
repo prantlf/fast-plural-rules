@@ -15,6 +15,6 @@ it('gets the form index for a valid locale', () => {
   expect(getPluralFormForCardinalByLocale('ru', 21)).toEqual(0)
 })
 
-it('throws an error for an unkown locale', () => {
+it('throws an error for an unknown locale', () => {
   expect(() => getPluralFormForCardinalByLocale('invalid', 1)).toThrow()
 })

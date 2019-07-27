@@ -10,7 +10,7 @@ it('gets the rule for a valid locale', () => {
   expect(typeof getPluralRuleForCardinalsByLocale('en')).toEqual('function')
 })
 
-it('normalizes an uppercase locale using underscores', () => {
+it('normalizes an upper-case locale using underscores', () => {
   expect(typeof getPluralRuleForCardinalsByLocale('PT_BR')).toEqual('function')
 })
 
@@ -19,5 +19,5 @@ it('defaults to a language if a specific country is not available', () => {
 })
 
 it('throws an error for an unknown locale', () => {
-  expect(() => getPluralRuleForCardinalsByLocale('invalied')).toThrow()
+  expect(() => getPluralRuleForCardinalsByLocale('invalid')).toThrow()
 })
