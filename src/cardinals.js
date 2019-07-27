@@ -19,6 +19,7 @@ const cardinals = {
     // 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
     // 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, ...
     () => 0,
+
     // Plural rule #1 (2 forms)
     // Families: Germanic (Danish, Dutch, English, Faroese, Frisian, German,
     //   Norwegian, Swedish), Finno-Ugric (Estonian, Finnish, Hungarian),
@@ -49,6 +50,7 @@ const cardinals = {
     // 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
     // 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, ...
     n => n === 1 ? 0 : 1,
+
     // Plural rule #2 (2 forms)
     // Families: Romanic (French, Brazilian Portuguese)
     // Locales: ach (Acholi), ak (Akan), am (Amharic), arn (Mapudungun),
@@ -61,6 +63,7 @@ const cardinals = {
     // 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
     // 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
     n => n <= 1 ? 0 : 1,
+
     // Plural rule #3 (3 forms)
     // Families: Baltic (Latvian, Latgalian)
     // Locales: lv (Latvian)
@@ -72,6 +75,7 @@ const cardinals = {
     // 43, 44, 45, 46, 47, 48, 49, 52, 53, ...
     // ends in 0: 0
     n => n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 !== 0 ? 1 : 2,
+
     // Plural rule #4 (4 forms)
     // Families: Celtic (Scottish Gaelic)
     // Locales: gd (Scottish Gaelic)
@@ -82,6 +86,7 @@ const cardinals = {
     // 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
     // 51, ...
     n => n === 1 || n === 11 ? 0 : n === 2 || n === 12 ? 1 : n > 2 && n < 20 ? 2 : 3,
+
     // Plural rule #5 (3 forms)
     // Families: Romanic (Romanian)
     // Locales: ro (Romanian)
@@ -94,6 +99,7 @@ const cardinals = {
     // 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
     // 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, ...
     n => n === 1 ? 0 : n === 0 || (n % 100 > 0 && n % 100 < 20) ? 1 : 2,
+
     // Plural rule #6 (3 forms)
     // Families: Baltic (Lithuanian)
     // Locales: lt (Lithuanian)
@@ -109,6 +115,7 @@ const cardinals = {
     // 54, 55, 56, 57, 58, 59, 62, 63, 64, 65, 66, 67, 68, 69, 72, 73, ...
     n => n % 10 === 1 && n % 100 !== 11 ? 0
       : n % 10 >= 2 && (n % 100 < 10 || n % 100 >= 20) ? 2 : 1,
+
     // Plural rule #7 (3 forms)
     // Families: Slavic (Belarusian, Bosnian, Croatian, Serbian, Russian, Ukrainian)
     // Locales: be (Belarusian), bs (Bosnian), hr (Croatian), ru (Russian),
@@ -126,6 +133,7 @@ const cardinals = {
     // 113, ..., 212, 213, ...
     n => n % 10 === 1 && n % 100 !== 11 ? 0
       : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2,
+
     // Plural rule #8 (3 forms)
     // Families: Slavic (Slovak, Czech)
     // Locales: cs (Czech), sk (Slovak)
@@ -135,6 +143,7 @@ const cardinals = {
     // 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
     // 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, ...
     n => n === 1 ? 0 : n >= 2 && n <= 4 ? 1 : 2,
+
     // Plural rule #9 (3 forms)
     // Families: Slavic (Polish)
     // Locales: pl (Polish)
@@ -148,6 +157,7 @@ const cardinals = {
     // 47, 48, 49, 50, 51, 55, 56, 57, 58, 59, 60, 61, 65, 66, 67, 68, ...
     n => n === 1 ? 0
       : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2,
+
     // Plural rule #10 (4 forms)
     // Families: Slavic (Slovenian, Sorbian)
     // Locales: sl (Slovenian)
@@ -158,6 +168,7 @@ const cardinals = {
     // 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
     // 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, ...
     n => n % 100 === 1 ? 0 : n % 100 === 2 ? 1 : n % 100 === 3 || n % 100 === 4 ? 2 : 3,
+
     // Plural rule #11 (5 forms)
     // Families: Celtic (Irish Gaelic)
     // Locales: ga (Irish)
@@ -169,6 +180,7 @@ const cardinals = {
     // 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
     // 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, ...
     n => n === 1 ? 0 : n === 2 ? 1 : n > 2 && n < 7 ? 2 : n > 6 && n < 11 ? 3 : 4,
+
     // Plural rule #12 (6 forms)
     // Families: Semitic (Arabic)
     // Locales: ar (Arabic)
@@ -184,6 +196,7 @@ const cardinals = {
     // is 0: 0
     n => n === 1 ? 0 : n === 2 ? 1 : n % 100 >= 3 && n % 100 <= 10 ? 2
       : n % 100 >= 11 ? 3 : n !== 0 ? 4 : 5,
+
     // Plural rule #13 (4 forms)
     // Families: Semitic (Maltese)
     // Locales: mt (Maltese)
@@ -198,6 +211,7 @@ const cardinals = {
     // 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, ...
     n => n === 1 ? 0 : n === 0 || (n % 100 > 1 && n % 100 < 11) ? 1
       : n % 100 > 10 && n % 100 < 20 ? 2 : 3,
+
     // Plural rule #14 (3 forms)
     // Families: unused
     // ends in 1: 1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101, 111, 121, 131, 141,
@@ -210,6 +224,7 @@ const cardinals = {
     // 20, 23, 24, 25, 26, 27, 28, 29, 30, 33, 34, 35, 36, 37, 38, 39, 40, 43,
     // 44, 45, 46, 47, 48, 49, 50, 53, 54, 55, 56, 57, 58, 59, 60, 63, ...
     n => n % 10 === 1 ? 0 : n % 10 === 2 ? 1 : 2,
+
     // Plural rule #15 (2 forms)
     // Families: Icelandic, Macedonian
     // Locales: is (Icelandic), mk (Macedonian)
@@ -220,6 +235,7 @@ const cardinals = {
     // 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36,
     // 37, 38, 39, 40, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 53, 54, ...
     n => n % 10 === 1 && n % 100 !== 11 ? 0 : 1,
+
     // Plural rule #16 (5 forms)
     // Families: Celtic (Breton)
     // ends in 1, excluding 11, 71, 91: 21, 31, 41, 51, 61, 81, 101, 121, 131,
@@ -239,6 +255,7 @@ const cardinals = {
             : n % 10 === 9 && n % 100 !== 19 && n % 100 !== 79 && n % 100 !== 99 ? 2
               : n % 1000000 === 0 ? 3
                 : 4,
+
     // Plural rule #17 (2 forms)
     // Families: Ecuador indigenous languages (Shuar)
     // Locales: jv (Javanese)
@@ -247,6 +264,7 @@ const cardinals = {
     // 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
     // is 0: 0
     n => n !== 0 ? 0 : 1,
+
     // Plural rule #18 (6 forms)
     // Families: Welsh
     // Locales: cy (Welsh)
@@ -259,6 +277,7 @@ const cardinals = {
     // 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
     // is 0: 0
     n => n === 1 ? 0 : n === 2 ? 1 : n === 3 ? 2 : n === 6 ? 3 : n !== 0 ? 4 : 5,
+
     // Plural rule #19 (3 forms)
     // Locales: csb (Kashubian)
     // is 1: 1
@@ -272,6 +291,7 @@ const cardinals = {
     // 71, 75, 76, 77, ..., 111, 115, ..., 211, 215, ...
     n => n === 1 ? 0
       : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2,
+
     // Plural rule #20 (4 forms)
     // Locales: kw (Cornish)
     // is 1: 1
@@ -281,6 +301,7 @@ const cardinals = {
     // 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
     // 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
     n => n === 1 ? 0 : n === 2 ? 1 : n === 3 ? 2 : 3,
+
     // Plural rule #21 (3 forms)
     // Locales: me (Montenegro)
     // ends in 1, excluding 11: 1, 21, 31, 41, 51, 61, 71, 81, 91, 101, 121, 131,
@@ -296,6 +317,7 @@ const cardinals = {
     // 113, ..., 212, 213, ...
     n => n % 10 === 1 && n % 100 !== 11 ? 0
       : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2,
+
     // Plural rule #22 (3 forms)
     // Locales: mnk (Mandinka)
     // is 0: 0
@@ -305,6 +327,7 @@ const cardinals = {
     // 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
     n => n === 0 ? 0 : n === 1 ? 1 : 2
   ],
+
   rulesByLocale: {
     ach: 2, // Acholi
     af: 1, // Afrikaans
