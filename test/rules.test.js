@@ -25,12 +25,10 @@ it('compute sample cardinals from each form', () => {
         .split(', ')
         .map(cardinal => +cardinal)
         .filter(cardinal => !isNaN(cardinal))
-        .forEach(cardinal => {
-          const result = rule(cardinal)
-          if (result !== formIndex) {
-            throw new Error(`${description.name} - the rule for "${formName}" returned ${result} instead of ${formIndex} for ${cardinal}.`)
-          }
-        })
+        .forEach(cardinal =>
+          expect(rule(cardinal),
+            `${description.name} - the rule "${formName}" with ${cardinal}.`)
+            .toEqual(formIndex))
     )
   })
 })
