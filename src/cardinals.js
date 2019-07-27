@@ -24,7 +24,7 @@ const cardinals = {
     // Families: Germanic (Danish, Dutch, English, Faroese, Frisian, German,
     //   Norwegian, Swedish), Finno-Ugric (Estonian, Finnish, Hungarian),
     //   Language isolate (Basque), Latin/Greek (Greek), Semitic (Hebrew),
-    //   Romanic (Italian, Portuguese, Spanish, Catalan), Vietnamese,
+    //   Romanic (Italian, Portuguese, Spanish, Catalan), Vietnamese
     // Locales: af (Afrikaans), an (Aragonese), anp (Angika), as (Assamese),
     //   ast (Asturian), az (Azerbaijani), bg (Bulgarian), bn (Bengali),
     //   brx (Bodo), ca (Catalan), da (Danish), de (German), doi (Dogri),
