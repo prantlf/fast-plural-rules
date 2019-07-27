@@ -2,15 +2,15 @@
 
 const { readFile } = require('fs-extra')
 const { join } = require('path')
-const { parsePluralRule } = require('./parse-plural-rule')
+const parsePluralRule = require('./parse-plural-rule')
 
 function readPluralRulesFromDescription () {
   return readInputFile().then(collectPluralRules)
 }
 
 function readInputFile () {
-  const inputFile = join(__dirname, '../docs/languages.md')
-  return readFile(inputFile, { encoding: 'utf-8' })
+  const fileName = join(__dirname, '../docs/languages.md')
+  return readFile(fileName, { encoding: 'utf-8' })
     .then(content => content.split(/\r?\n/))
 }
 
@@ -41,4 +41,4 @@ function collectPluralRules (lines) {
   return pluralRules
 }
 
-module.exports = { readPluralRulesFromDescription }
+module.exports = readPluralRulesFromDescription

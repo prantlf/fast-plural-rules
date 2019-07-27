@@ -62,4 +62,4 @@ function parsePluralForms (ruleLines, startIndex = 0) {
   }
 }
 
-module.exports = { parsePluralRule }
+module.exports = parsePluralRule
