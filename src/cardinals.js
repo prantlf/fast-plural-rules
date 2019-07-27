@@ -1,6 +1,6 @@
 // See the plural rules at https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals#List_of_Plural_Rules
 // See the expressions to identify the plural form at http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html#pluralforms-list
-// and at https://hg.mozilla.org/releases/mozilla-release/file/837bbcb850cd58eb07c7f6437078d5229986967c/intl/locale/PluralForm.jsm
+// and at https://hg.mozilla.org/releases/mozilla-release/file/837bbcb850cd58eb07c7f6437078d5229986967c/intl/locale/PluralForm.jsm (resource://gre/modules/PluralForm.jsm)
 
 /* eslint-disable no-confusing-arrow, no-nested-ternary */
 /* istanbul ignore file */
@@ -67,14 +67,14 @@ const cardinals = {
     // Plural rule #3 (3 forms)
     // Families: Baltic (Latvian, Latgalian)
     // Locales: lv (Latvian)
+    // ends in 0: 0
     // ends in 1, excluding 11: 1, 21, 31, 41, 51, 61, 71, 81, 91, 101, 121, 131,
     // 141, 151, 161, 171, 181, 191, 201, 221, 231, 241, 251, 261, 271, 281, 291,
     // ...
     // everything else: 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18,
     // 19, 22, 23, 24, 25, 26, 27, 28, 29, 32, 33, 34, 35, 36, 37, 38, 39, 42,
     // 43, 44, 45, 46, 47, 48, 49, 52, 53, ...
-    // ends in 0: 0
-    n => n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 !== 0 ? 1 : 2,
+    n => n % 10 === 1 && n % 100 !== 11 ? 1 : n % 10 !== 0 ? 2 : 0,
 
     // Plural rule #4 (4 forms)
     // Families: Celtic (Scottish Gaelic)
@@ -260,15 +260,16 @@ const cardinals = {
     // Plural rule #17 (2 forms)
     // Families: Ecuador indigenous languages (Shuar)
     // Locales: jv (Javanese)
+    // is 0: 0
     // everything else: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
     // 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
     // 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
-    // is 0: 0
-    n => n !== 0 ? 0 : 1,
+    n => n !== 0 ? 1 : 0,
 
     // Plural rule #18 (6 forms)
     // Families: Welsh
     // Locales: cy (Welsh)
+    // is 0: 0
     // is 1: 1
     // is 2: 2
     // is 3: 3
@@ -276,8 +277,7 @@ const cardinals = {
     // everything else: 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     // 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
     // 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, ...
-    // is 0: 0
-    n => n === 1 ? 0 : n === 2 ? 1 : n === 3 ? 2 : n === 6 ? 3 : n !== 0 ? 4 : 5,
+    n => n === 1 ? 1 : n === 2 ? 2 : n === 3 ? 3 : n === 6 ? 4 : n !== 0 ? 5 : 0,
 
     // Plural rule #19 (3 forms)
     // Locales: csb (Kashubian)
