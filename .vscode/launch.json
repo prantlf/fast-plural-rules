@@ -7,7 +7,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "All Tests",
+      "name": "All tests",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
         "-i",
@@ -22,7 +22,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Test documentation",
+      "name": "Documentation test",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "args": [
         "-i",
