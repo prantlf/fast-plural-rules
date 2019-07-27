@@ -12,9 +12,10 @@ const tests = join(__dirname, '../test')
 const browserTests = join(tests, 'browser')
 const nonBrowserTests = [
   'browser.test.js', 'documentation.test.js',
-  'rules.test.js', 'rulesByLocale.test.js', 'typings.test.js'
+  'rulesByLocale.test.js', 'typings.test.js'
 ]
-const importModuleExpression = /import ({[^}]+}) from '..\/src\/([^']+)'/
+const importModuleExpression = /import ((?:{[^}]+})|(?:\w+)) from '..\/src\/([^']+)'/
+const importDataExpression = /import descriptions from '.\/plural-rule-definitions.json'/
 
 function readTemplate () {
   console.log(`Reading browser test template...`)
@@ -35,21 +36,41 @@ function formatModuleImport (input) {
   if (!match) {
     throw new Error('Statement requiring the code module not found.')
   }
-  const name = match[2]
   const functionCodeLine = input.replace(importModuleExpression,
     `const $1 = window['fastPluralRules']`)
+  const scriptName = match[1] === 'cardinals'
+    ? '../cardinals.umd.js' : '../../dist/index.umd.js'
   const functionScriptElement = [
-    '<script src="../../dist/' + name + '.umd.js"></script>'
+    '<script src="' + scriptName + '"></script>'
   ]
   return { functionCodeLine, functionScriptElement }
 }
 
+function formatDataImport (input) {
+  const match = importDataExpression.exec(input)
+  let dataCodeLine
+  let dataScriptElement
+  if (match) {
+    dataCodeLine = input.replace(importDataExpression,
+      `const descriptions = window['pluralRuleDefinitions']`)
+    dataScriptElement = [
+      '<script src="../plural-rule-definitions.js"></script>'
+    ]
+  }
+  return { dataCodeLine, dataScriptElement }
+}
+
 function formatPage (template, contentIndex, content) {
   const { functionCodeLine, functionScriptElement } = formatModuleImport(content[0])
+  const { dataCodeLine, dataScriptElement } = formatDataImport(content[1])
   content[0] = functionCodeLine
+  if (dataCodeLine) {
+    content[1] = dataCodeLine
+  }
   return template.slice(0, contentIndex)
     .concat('')
     .concat(functionScriptElement)
+    .concat(dataScriptElement || [])
     .concat('')
     .concat('<script>', '(function () {', content, '})()', '</script>')
     .concat(template.slice(contentIndex))

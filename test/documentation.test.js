@@ -1,14 +1,28 @@
 /* global it, expect */
 
-import { readPluralRulesFromDescription } from '../util/read-rules-from-description'
-import { readPluralRulesFromComments } from '../util/read-rules-from-comments'
-
-const descriptions = readPluralRulesFromDescription()
-const comments = readPluralRulesFromComments()
+import readPluralRulesFromComments from '../util/read-rules-from-comments'
+import descriptions from './plural-rule-definitions.json'
 
 it('markdown description matches code comments', () => {
-  return Promise.all([descriptions, comments]).then(([descriptions, comments]) => {
-    comparePluralRules(descriptions, comments)
+  return readPluralRulesFromComments()
+    .then(comments => comparePluralRules(descriptions, comments))
+})
+
+it('rules are numbered ascending', () => {
+  descriptions.forEach((description, index) => {
+    const match = /#(\d+)/.exec(description.name)
+    expect(match).toBeTruthy()
+    const ruleIndex = +match[1]
+    expect(ruleIndex).toEqual(index)
+  })
+})
+
+it('form count matches the note in the rule title', () => {
+  descriptions.forEach(description => {
+    const match = /\((\d+) form(?:s)?\)/.exec(description.name)
+    expect(match).toBeTruthy()
+    const formCount = +match[1]
+    expect(Object.keys(description.forms).length).toEqual(formCount)
   })
 })
 

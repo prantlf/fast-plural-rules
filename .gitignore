@@ -4,4 +4,6 @@ dist
 node_modules
 src/data.js
 test/browser
+test/cardinals.umd.js
+test/plural-rule-definitions.js*
 test/typings.test.js

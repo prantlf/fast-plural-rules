@@ -37,6 +37,7 @@
     "lint:fix": "standard --verbose --fix",
     "lint:js": "standard --verbose",
     "lint:ts": "tslint -t stylish src/*.ts test/*.ts",
+    "generate:plural-rule-definitions": "node util/generate-plural-rule-definitions",
     "generate:browser-tests": "node util/generate-browser-tests",
     "compile": "rollup -c",
     "copy:typings": "cpy src/*.d.ts dist",
@@ -46,7 +47,7 @@
     "check:browser": "jest --testPathPattern browser.test.js",
     "benchmark": "node perf",
     "coverage": "test `node --version | cut -c 2,3` -eq 10 && cat coverage/lcov.info | coveralls",
-    "test": "run-s compile:tests check generate:browser-tests check:browser"
+    "test": "run-s compile:tests generate:plural-rule-definitions check generate:browser-tests check:browser"
   },
   "standard": {
     "ignore": [
@@ -59,7 +60,7 @@
       "test"
     ],
     "testMatch": [
-      "**/test/*.js"
+      "**/test/*.test.js"
     ],
     "coverageDirectory": "coverage",
     "collectCoverageFrom": [
