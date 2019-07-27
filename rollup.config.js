@@ -26,5 +26,17 @@ export default [
       babel({ exclude: 'node_modules/**' }),
       uglify()
     ]
+  },
+  {
+    input: 'src/cardinals.js',
+    output: {
+      file: 'test/cardinals.umd.js',
+      format: 'umd',
+      name: 'fastPluralRules'
+    },
+    plugins: [
+      babel({ exclude: 'node_modules/**' }),
+      cleanup()
+    ]
   }
 ]
