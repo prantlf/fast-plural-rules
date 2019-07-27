@@ -1,5 +1,6 @@
 // See the plural rules at https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals#List_of_Plural_Rules
 // See the expressions to identify the plural form at http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html#pluralforms-list
+// and at https://hg.mozilla.org/releases/mozilla-release/file/837bbcb850cd58eb07c7f6437078d5229986967c/intl/locale/PluralForm.jsm
 
 /* eslint-disable no-confusing-arrow, no-nested-ternary */
 /* istanbul ignore file */
@@ -227,16 +228,17 @@ const cardinals = {
     // 142, 152, 162, 182, 202, 222, 232, 242, 252, 262, 282, ...
     // ends in 3, 4 or 9 excluding 13, 14, 19, 73, 74, 79, 93, 94, 99: 3, 4, 9,
     // 23, 24, 29, 33, 34, 39, 43, 44, 49, 53, 54, 59, ...
-    // ends in 1000000: 1000000: 1000000, 2000000, 3000000, 4000000, 5000000,
+    // ends in 000000: 1000000, 2000000, 3000000, 4000000, 5000000,
     // 6000000, 7000000, 8000000, 9000000, 10000000, ...
     // everything else: 0, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     // 20, 25, 26, 27, 28, 30, 35, 36, 37, 38, 40, ...
     n => n % 10 === 1 && n % 100 !== 11 && n % 100 !== 71 && n % 100 !== 91 ? 0
-      : n % 10 === 2 && n % 100 !== 12 && n % 100 !== 72 && n % 100 !== 92 ? 2
-        : n % 10 === 3 && n % 100 !== 13 && n % 100 !== 73 && n % 100 !== 93 ? 3
-          : n % 10 === 4 && n % 100 !== 14 && n % 100 !== 74 && n % 100 !== 94 ? 3
-            : n % 10 === 9 && n % 100 !== 19 && n % 100 !== 79 && n % 100 !== 99 ? 3
-              : 4,
+      : n % 10 === 2 && n % 100 !== 12 && n % 100 !== 72 && n % 100 !== 92 ? 1
+        : n % 10 === 3 && n % 100 !== 13 && n % 100 !== 73 && n % 100 !== 93 ? 2
+          : n % 10 === 4 && n % 100 !== 14 && n % 100 !== 74 && n % 100 !== 94 ? 2
+            : n % 10 === 9 && n % 100 !== 19 && n % 100 !== 79 && n % 100 !== 99 ? 2
+              : n % 1000000 === 0 ? 3
+                : 4,
     // Plural rule #17 (2 forms)
     // Families: Ecuador indigenous languages (Shuar)
     // Locales: jv (Javanese)
