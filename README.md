@@ -14,9 +14,10 @@ Evaluates locale-specific plural rules to identify the right plural form for a c
 * Focused and complete - [nothing but the rule evaluation](./src/index.d.ts) is included, but still [supporting almost 150 languages](./docs/languages.md#supported-languages).
 * Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./docs/design.md#locales).
 * Standard and documented - written using the [Translate Project documentation] and the [Mozilla documentation].
-* Reliable and correct - contains the full test suite comparing the actual results with the Mozilla specification.
+* Reliable and correct - contains the [full test suite] [comparing the actual results with the Mozilla specification], run in both Node.js and the browser.
+* Universal and modern - supports both plural form index (0-5) and plural form rules (`zero`, `one`, `two`, `few`, `many` and `other`) and includes declarations for [TypeScript].
 
-If you are looking for a library using the regularly updated [CLDR plural rules], only just a little bigger, see [plural-rules].
+If you are looking for a library compiling and executing the declarative [CLDR plural rules], see [plural-rules]. Generated programmatically for better reliability, but a little bigger and slower.
 
 ### Table of Contents
 
@@ -45,11 +46,11 @@ getPluralFormForCardinalByLocale('cs', 2) // Returns 1; "2 soubory"
 getPluralFormForCardinalByLocale('cs', 5) // Returns 2; "5 souborů"
 
 // Returns a localized message for the specified locale and cardinal.
-getMessage('en', 'fileCount', 3) // Returns "3 files"
-getMessage('cs', 'fileCount', 3) // Returns "3 soubory"
+localizeMessage('en', 'fileCount', 3) // Returns "3 files"
+localizeMessage('cs', 'fileCount', 3) // Returns "3 soubory"
 
 // Returns a localized message for the specified locale and cardinal.
-function getMessage (locale, messageKey, cardinal) {
+function localizeMessage (locale, messageKey, cardinal) {
   const pluralForm = getPluralFormForCardinalByLocale(locale, cardinal)
   const messageFormat = messages[locale][messageKey][pluralForm]
   return messageFormat.replace('{0}', cardinal)
@@ -69,6 +70,27 @@ const messages = {
       "{0} soubory", // 1 - plural for 2-4 items
       "{0} souborů"  // 2 - plural for 5+ items
     ]
+  }
+}
+```
+
+There is another [full example using plural form names](./docs/design.md#using-form-names) instead of numeric indexes like this:
+
+```js
+// Localized messages organized by locales and message keys.
+const messages = {
+  en: {
+    fileCount: {
+      one:   '{0} file', // singular
+      other: '{0} files' // plural
+    }
+  },
+  cs: {
+    fileCount: {
+      one:   '{0} soubor',  // singular
+      few:   '{0} soubory', // plural for 2-4 items
+      other: '{0} souborů'  // plural for 5 and more items
+    }
   }
 }
 ```
@@ -103,8 +125,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-* 2019-07-27   v1.0.0   Correct rules for Baltic, Celtic, Semitic, Shuar and Welsh
-                        language families to match the latest Mozilla documentation, complete the test suite
+* 2019-07-31   v1.0.0   Correct rules for Baltic, Celtic, Semitic, Shuar and Welsh
+                        language families to match the latest Mozilla documentation, support CLDR plural form names, complete the test suite
 * 2018-10-28   v0.0.1   Initial release
 
 ## License
@@ -116,9 +138,12 @@ Licensed under the MIT license.
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.com/
 [Yarn]: https://yarnpkg.com/
+[TypeScript]: https://www.typescriptlang.org/
+[full test suite]: https://travis-ci.org/prantlf/fast-plural-rules
+[comparing the actual results with the Mozilla specification]: https://github.com/prantlf/fast-plural-rules/blob/master/test/rules.test.js
 [Translate Project documentation]: http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html#pluralforms-list
 [Mozilla documentation]: https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals#List_of_Plural_Rules
 [Extended Day.js]: https://github.com/prantlf/dayjs
 [relativeTime plugin]: https://github.com/prantlf/dayjs/blob/combined/docs/en/Plugin.md#relativetime
-[CLDR plural rules]: http://cldr.unicode.org/index/cldr-spec/plural-rules
+[CLDR plural rules]: http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
 [plural-rules]: https://github.com/prantlf/plural-rules

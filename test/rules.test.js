@@ -10,12 +10,13 @@ it('are exported as an array', () => {
 })
 
 it('all of them are functions', () => {
-  for (const rule of rules) {
-    expect(typeof rule).toEqual('function')
-  }
+  rules.forEach((rule, index) => {
+    expect(typeof rule, `Rule at ${index}.`).toEqual('function')
+  })
 })
 
 it('compute sample cardinals from each form', () => {
+  expect(rules.length).toEqual(descriptions.length)
   descriptions.forEach((description, ruleIndex) => {
     const rule = rules[ruleIndex]
     const forms = description.forms

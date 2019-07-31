@@ -3,14 +3,16 @@
 function parsePluralRule (name, ruleLines) {
   const { items: families, nextIndex: afterFamilies } = parseNamedList(ruleLines, 'Families')
   const { items: locales, nextIndex: afterLocales } = parseNamedList(ruleLines, 'Locales', afterFamilies)
-  const forms = parsePluralForms(ruleLines, afterLocales)
-  return { name, families, locales, forms }
+  const { items: namedFormsString, nextIndex: afterNamedForms } = parseNamedList(ruleLines, 'Forms', afterLocales)
+  const namedForms = namedFormsString.split(', ')
+  const forms = parsePluralForms(ruleLines, afterNamedForms)
+  return { name, families, locales, namedForms, forms }
 }
 
 function parseNamedList (ruleLines, listName, startIndex = 0) {
   const items = []
   let insideNamedList
-  const nextIndex = ruleLines.findIndex((line, index) => {
+  let nextIndex = ruleLines.findIndex((line, index) => {
     if (index < startIndex) {
       return
     }
@@ -27,13 +29,16 @@ function parseNamedList (ruleLines, listName, startIndex = 0) {
       items.push(line)
     }
   })
+  if (nextIndex < 0) {
+    nextIndex = startIndex
+  }
   return {
     items: items.join(' '), nextIndex
   }
 }
 
 function parsePluralForms (ruleLines, startIndex = 0) {
-  const ignoredListNames = ['Families', 'Locales']
+  const ignoredListNames = ['Families', 'Locales', 'Forms']
   const namedLists = {}
   let currentName
   let currentItems

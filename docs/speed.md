@@ -1,14 +1,14 @@
 # Plural Form Lookup Speed
 
-Using [plain hand-coded functions](../src/cardinals.js) is faster, than parsing the CLDR rules on the fly, as shown by a [simple benchmark](../perf/index.js), while still keeping the library size small.
+Using [plain hand-coded functions](../src/cardinals.js) is more than 300x faster, than parsing the CLDR rules on the fly, as shown by a [simple benchmark](../perf/index.js), while still keeping the library size small.
 
 ```txt
 $ node perf
 Getting a plural form...
-  using a simple coded rule x 5,799,112 ops/sec ±0.52% (90 runs sampled)
-  using a simple parsed rule x 8,113 ops/sec ±1.25% (82 runs sampled)
-  using an average coded rule x 3,150,432 ops/sec ±0.43% (94 runs sampled)
-  using an average parsed rule x 4,333 ops/sec ±1.37% (90 runs sampled)
-  using a complicated coded rule x 2,800,479 ops/sec ±0.31% (95 runs sampled)
-  using a complicated parsed rule x 2,881 ops/sec ±1.03% (87 runs sampled)
+  using a simple coded rule x 7,865,745 ops/sec ±0.69% (89 runs sampled)
+  using a simple parsed rule x 21,284 ops/sec ±0.77% (89 runs sampled)
+  using an average coded rule x 4,613,806 ops/sec ±0.41% (88 runs sampled)
+  using an average parsed rule x 11,234 ops/sec ±0.68% (90 runs sampled)
+  using a complicated coded rule x 4,493,341 ops/sec ±0.43% (88 runs sampled)
+  using a complicated parsed rule x 7,400 ops/sec ±0.70% (89 runs sampled)
 ```

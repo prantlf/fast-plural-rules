@@ -26,7 +26,8 @@ it('are exported as an object', () => {
 it('all locales point to a valid rule index', () => {
   for (const locale in rulesByLocale) {
     const index = rulesByLocale[locale]
-    expect(typeof rules[index]).toEqual('function')
+    expect(typeof rules[index],
+      `Locale "${locale}", rule ${index}.`).toEqual('function')
   }
 })
 
