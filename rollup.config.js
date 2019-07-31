@@ -36,6 +36,19 @@ export default [
     },
     plugins: [
       babel({ exclude: 'node_modules/**' }),
+      cleanup()
+    ]
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'dist/index.umd.min.js',
+      format: 'umd',
+      name: 'fastPluralRules',
+      sourcemap: true
+    },
+    plugins: [
+      babel({ exclude: 'node_modules/**' }),
       uglify()
     ]
   },

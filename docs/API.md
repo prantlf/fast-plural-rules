@@ -34,7 +34,7 @@ import {
 Load the main module in the browser with plain JavaScript:
 
 ```html
-<script src="./node_modules/fast-plural-rules/dist/index.umd.js"></script>
+<script src="./node_modules/fast-plural-rules/dist/index.umd.min.js"></script>
 <script>
   (() => {
     const { getPluralFormForCardinalByLocale } = window.fastPluralRules
@@ -42,7 +42,7 @@ Load the main module in the browser with plain JavaScript:
 </script>
 ```
 
-You can also load a specific version from CDN, for example: https://unpkg.com/fast-plural-rules@0.0.1/dist/index.umd.js.
+You can also load a specific version from CDN, for example: https://unpkg.com/fast-plural-rules@1.0.0/dist/index.umd.min.js.
 
 ## Functions
 

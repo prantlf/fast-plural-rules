@@ -30,6 +30,8 @@ function readTest (file) {
     })
 }
 
+let counter = 0
+
 function formatModuleImport (input) {
   const match = importModuleExpression.exec(input)
   if (!match) {
@@ -37,8 +39,13 @@ function formatModuleImport (input) {
   }
   const functionCodeLine = input.replace(importModuleExpression,
     `const $1 = window['fastPluralRules']`)
-  const scriptName = match[1] === 'cardinals'
-    ? '../cardinals.umd.js' : '../../dist/index.umd.js'
+  let scriptName
+  if (match[1] === 'cardinals') {
+    scriptName = '../cardinals.umd.js'
+  } else {
+    scriptName = counter++ % 2 === 0 ? '../../dist/index.umd.min.js'
+      : '../../dist/index.umd.js'
+  }
   const functionScriptElement = [
     '<script src="' + scriptName + '"></script>'
   ]
