@@ -1,6 +1,6 @@
 # Plural Form Lookup Speed
 
-Using [plain hand-coded functions](../src/cardinals.js) is more than 300x faster, than parsing the CLDR rules on the fly, as shown by a [simple benchmark](../perf/index.js), while still keeping the library size small.
+Using [plain hand-coded functions](../src/cardinals.js) is more than 300x faster, than parsing the CLDR rules on the fly, as shown by a [simple benchmark](../perf/index.js), while still keeping the library size smaller.
 
 ```txt
 $ node perf

@@ -12,12 +12,12 @@
 Evaluates locale-specific plural rules to identify the right plural form for a cardinal number, which represents an item count. Internationalization libraries can utilize it to choose the right localized string.
 
 * Focused and complete - [nothing but the rule evaluation](./src/index.d.ts) is included, but still [supporting almost 150 languages](./docs/languages.md#supported-languages).
-* Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 3 kB minified, 1 kB gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./docs/design.md#locales).
+* Tiny and [fast](./docs/speed.md#plural-form-lookup-speed) - 7.27 kB, 4.8 kB minified, 1.32 kB, gzipped. Using [plain hand-coded functions](./src/cardinals.js) as [plural rules](./docs/design.md#plural-rules) to pick [plural forms](./docs/design.md#plural-forms) using [language locales](./docs/design.md#locales).
 * Standard and documented - written using the [Translate Project documentation] and the [Mozilla documentation].
 * Reliable and correct - contains the [full test suite] [comparing the actual results with the Mozilla specification], run in both Node.js and the browser.
 * Universal and modern - supports both plural form index (0-5) and plural form rules (`zero`, `one`, `two`, `few`, `many` and `other`) and includes declarations for [TypeScript].
 
-If you are looking for a library compiling and executing the declarative [CLDR plural rules], see [plural-rules]. Generated programmatically for better reliability, but a little bigger and slower.
+If you are looking for a library compiling and executing the declarative [CLDR plural rules], see [plural-rules]. Generated programmatically for better reliability, but bigger and slower.
 
 ### Table of Contents
 
