@@ -17,7 +17,7 @@ const importModuleExpression = /import ((?:{[^}]+})|(?:\w+)) from '..\/src\/([^'
 const importDataExpression = /import descriptions from '.\/plural-rule-definitions.json'/
 
 function readTemplate () {
-  console.log(`Reading browser test template...`)
+  console.log('Reading browser test template...')
   return readFile(join(tests, 'browser.html'), { encoding: 'utf-8' })
     .then(template => template.split('\n'))
 }
@@ -38,7 +38,7 @@ function formatModuleImport (input) {
     throw new Error('Statement requiring the code module not found.')
   }
   const functionCodeLine = input.replace(importModuleExpression,
-    `const $1 = window['fastPluralRules']`)
+    'const $1 = window[\'fastPluralRules\']')
   let scriptName
   if (match[1] === 'cardinals') {
     scriptName = '../cardinals.umd.js'
@@ -58,7 +58,7 @@ function formatDataImport (input) {
   let dataScriptElement
   if (match) {
     dataCodeLine = input.replace(importDataExpression,
-      `const descriptions = window['pluralRuleDefinitions']`)
+      'const descriptions = window[\'pluralRuleDefinitions\']')
     dataScriptElement = [
       '<script src="../plural-rule-definitions.js"></script>'
     ]
@@ -82,7 +82,7 @@ function formatPage (template, contentIndex, content) {
     .concat(template.slice(contentIndex))
 }
 
-console.log(`Deleting existing browser tests...`)
+console.log('Deleting existing browser tests...')
 let template
 rimraf(browserTests)
   .then(() => readTemplate())
