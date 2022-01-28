@@ -1,6 +1,6 @@
-import babel from 'rollup-plugin-babel'
+import { babel } from '@rollup/plugin-babel'
 import cleanup from 'rollup-plugin-cleanup'
-import { uglify } from 'rollup-plugin-uglify'
+import { terser } from 'rollup-plugin-terser'
 
 export default [
   {
@@ -49,7 +49,7 @@ export default [
     },
     plugins: [
       babel({ exclude: 'node_modules/**' }),
-      uglify()
+      terser()
     ]
   },
   {
