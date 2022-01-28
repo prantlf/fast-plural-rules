@@ -1,13 +1,9 @@
 # Fast Plural Rules
-[![NPM version](https://badge.fury.io/js/fast-plural-rules.png)](http://badge.fury.io/js/fast-plural-rules)
-[![Build Status](https://travis-ci.org/prantlf/fast-plural-rules.png)](https://travis-ci.org/prantlf/fast-plural-rules)
-[![Coverage Status](https://coveralls.io/repos/github/prantlf/fast-plural-rules/badge.svg?branch=master)](https://coveralls.io/github/prantlf/fast-plural-rules?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/94ba20975c8b4feb8b8b280de2ffcb9b)](https://www.codacy.com/app/prantlf/fast-plural-rules?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prantlf/fast-plural-rules&amp;utm_campaign=Badge_Grade)
-[![Dependency Status](https://david-dm.org/prantlf/fast-plural-rules.svg)](https://david-dm.org/prantlf/fast-plural-rules)
-[![devDependency Status](https://david-dm.org/prantlf/fast-plural-rules/dev-status.svg)](https://david-dm.org/prantlf/fast-plural-rules#info=devDependencies)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![NPM Downloads](https://nodei.co/npm/fast-plural-rules.png?downloads=true&stars=true)](https://www.npmjs.com/package/fast-plural-rules)
+[![Latest version](https://img.shields.io/npm/v/fast-plural-rules)
+ ![Dependency status](https://img.shields.io/librariesio/release/npm/fast-plural-rules)
+](https://www.npmjs.com/package/fast-plural-rules)
+[![Coverage](https://codecov.io/gh/prantlf/fast-plural-rules/branch/master/graph/badge.svg)](https://codecov.io/gh/prantlf/fast-plural-rules)
 
 Evaluates locale-specific plural rules to identify the right plural form for a cardinal number, which represents an item count. Internationalization libraries can utilize it to choose the right localized string.
 
@@ -131,7 +127,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## License
 
-Copyright (c) 2018-2019 Ferdinand Prantl
+Copyright (c) 2018-2022 Ferdinand Prantl
 
 Licensed under the MIT license.
 
