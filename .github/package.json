@@ -1,0 +1,65 @@
+{
+  "name": "babel-plugin-amd-checker",
+  "version": "0.0.2",
+  "description": "Module format checking plugin for Babel usable in both Node.js the web browser environments.",
+  "author": {
+    "name": "Ferdinand Prantl",
+    "email": "prantlf@gmail.com",
+    "url": "http://prantl.tk"
+  },
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/babel-plugin-amd-checker/blob/master/LICENSE"
+    }
+  ],
+  "homepage": "https://github.com/prantlf/babel-plugin-amd-checker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prantlf/babel-plugin-amd-checker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/babel-plugin-amd-checker/issues"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "failComment": false
+        }
+      ],
+      "@semantic-release/git"
+    ]
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "eslint": "^8.5.0"
+  },
+  "keywords": [
+    "babel-plugin",
+    "module",
+    "transform",
+    "babel",
+    "plugin",
+    "requirejs",
+    "browser",
+    "amd"
+  ]
+}
