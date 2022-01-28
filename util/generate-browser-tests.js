@@ -43,7 +43,8 @@ function formatModuleImport (input) {
   if (match[1] === 'cardinals') {
     scriptName = '../cardinals.umd.js'
   } else {
-    scriptName = counter++ % 2 === 0 ? '../../dist/index.umd.min.js'
+    scriptName = counter++ % 2 === 0
+      ? '../../dist/index.umd.min.js'
       : '../../dist/index.umd.js'
   }
   const functionScriptElement = [

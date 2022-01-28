@@ -14,20 +14,21 @@ function parseNamedList (ruleLines, listName, startIndex = 0) {
   let insideNamedList
   let nextIndex = ruleLines.findIndex((line, index) => {
     if (index < startIndex) {
-      return
+      return false
     }
     const match = /^([^:]+):\s*(.+)$/.exec(line)
     if (match) {
       if (!insideNamedList && match[1] === listName) {
         items.push(match[2])
         insideNamedList = true
-        return
+        return false
       }
       return true
     }
     if (insideNamedList) {
       items.push(line)
     }
+    return false
   })
   if (nextIndex < 0) {
     nextIndex = startIndex

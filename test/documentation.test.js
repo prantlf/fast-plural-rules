@@ -27,7 +27,7 @@ it('form count matches the note in the rule title', () => {
 })
 
 it('locales are assigned to distinct rules', () => {
-  var referredLocales = {}
+  const referredLocales = {}
   descriptions
     .filter(description => description.locales)
     .forEach(description => {

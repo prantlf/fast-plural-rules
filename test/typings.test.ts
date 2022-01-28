@@ -1,14 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import {
   getPluralFormForCardinalByLocale, getPluralRuleForCardinalsByLocale,
   getPluralFormNameForCardinalByLocale, getPluralRuleForNamedFormsForCardinalsByLocale,
   getPluralFormForCardinalByIndex, getPluralRuleForCardinalsByIndex,
-  getPluralFormNameForCardinalByIndex, getPluralRuleForNamedFormsForCardinalsByIndex
+  getPluralFormNameForCardinalByIndex, getPluralRuleForNamedFormsForCardinalsByIndex,
+  getPluralFormForCardinal
 } from '..'
 
-declare function test (label: string, callback: Function)
+declare type testCallback = () => void
+declare function test (label: string, callback: testCallback): void
 
 test('Type declarations for TypeScript', () => {
-  let rule: Function
+  let rule: getPluralFormForCardinal
   let formIndex: number
   let formName: string
   rule = getPluralRuleForCardinalsByIndex(0)
