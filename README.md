@@ -25,7 +25,6 @@ If you are looking for a library compiling and executing the declarative [CLDR p
 - [API Reference](./docs/API.md#api-reference)
 - [Library Integrations](#library-integrations)
 - [Contributing](#contributing)
-- [Release History](#release-history)
 - [License](#license)
 
 ## Synopsis
@@ -118,12 +117,6 @@ You can read more about the [module loading](./docs/API.md#loading) in other env
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style.  Add unit tests for any new or changed functionality. Lint and test your code using Grunt.
-
-## Release History
-
-* 2019-07-31   v1.0.0   Correct rules for Baltic, Celtic, Semitic, Shuar and Welsh
-                        language families to match the latest Mozilla documentation, support CLDR plural form names, complete the test suite
-* 2018-10-28   v0.0.1   Initial release
 
 ## License
 
