@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import {
   getPluralFormForCardinalByLocale, getPluralRuleForCardinalsByLocale,
   getPluralFormNameForCardinalByLocale, getPluralRuleForNamedFormsForCardinalsByLocale,
   getPluralFormForCardinalByIndex, getPluralRuleForCardinalsByIndex,
   getPluralFormNameForCardinalByIndex, getPluralRuleForNamedFormsForCardinalsByIndex,
+  getSupportedLocales, getPluralFormCountForLocale, getPluralFormNamesForLocale,
   getPluralFormForCardinal
 } from 'fast-plural-rules'
 
@@ -23,4 +22,7 @@ test('Type declarations for TypeScript', () => {
   _formName = getPluralFormNameForCardinalByIndex(7, 2)
   _formIndex = getPluralFormForCardinalByLocale('cs', 3)
   _formName = getPluralFormNameForCardinalByLocale('cs', 3)
+  const _locales: string[] = getSupportedLocales()
+  const _pluralFormCount: number | undefined = getPluralFormCountForLocale('cs')
+  const _pluralFormNames: string[] | undefined = getPluralFormNamesForLocale('cs')
 })

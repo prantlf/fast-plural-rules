@@ -1,7 +1,7 @@
 /* global beforeAll, afterAll, it, expect */
 
 import { join } from 'path'
-import { readdir } from 'fs/promises'
+import { readdirSync } from 'fs'
 import connect from 'connect'
 import serve from 'serve-static'
 import puppeteer from 'puppeteer'
@@ -49,7 +49,7 @@ afterAll(done => {
     .then(() => server.close(done))
 })
 
-const tests = await readdir(join(__dirname, 'browser'))
+const tests = readdirSync(join(__dirname, 'browser'))
 for (const test of tests) {
   it(`Execute ${test}`, done => {
     let result

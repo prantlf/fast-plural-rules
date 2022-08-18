@@ -12,4 +12,8 @@ export function getPluralRuleForNamedFormsForCardinalsByLocale (locale: string):
 export function getPluralRuleForCardinalsByIndex (index: number): getPluralFormForCardinal
 export function getPluralRuleForNamedFormsForCardinalsByIndex (index: number): getPluralFormForCardinal
 
+export function getSupportedLocales(): string[]
+export function getPluralFormCountForLocale(locale: string): number
+export function getPluralFormNamesForLocale(locale: string): string[]
+
 export as namespace fastPluralRules

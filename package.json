@@ -29,24 +29,22 @@
   "module": "dist/index.mjs",
   "main": "dist/index.cjs",
   "browser": "dist/index.umd.min.js",
-  "types": "lib/index.d.ts",
+  "types": "src/index.d.ts",
   "exports": {
     "require": "./dist/index.cjs",
     "import": "./dist/index.mjs"
   },
   "files": [
     "dist",
-    "lib/index.d.ts"
+    "src/index.d.ts"
   ],
   "scripts": {
     "prepare": "rollup -c",
     "lint": "denolint && tsc --noEmit test/types.test.ts",
-    "generate:plural-rule-definitions": "node util/generate-plural-rule-definitions",
-    "generate:browser-tests": "node util/generate-browser-tests",
     "check": "node test/cjs.cjs && node --experimental-vm-modules node_modules/jest/bin/jest --testPathIgnorePatterns \"browser.test.js\" --collectCoverage",
     "check:browser": "node --experimental-vm-modules node_modules/jest/bin/jest --testPathPattern browser.test.js",
-    "pretest": "run-s lint generate:plural-rule-definitions generate:browser-tests",
-    "test": "run-s lint check check:browser",
+    "pretest": "npm run lint && node util/generate-plural-rule-definitions && node util/generate-browser-tests",
+    "test": "npm run lint && npm run check && npm run check:browser",
     "start": "python3 -m http.server"
   },
   "jest": {
@@ -94,14 +92,12 @@
     "@node-rs/deno-lint": "^1.14.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "cldr-data": "^36.0.1",
     "connect": "^3.7.0",
     "fast-glob": "^3.2.11",
     "fast-plural-rules": "link:",
     "jasmine-core": "^4.3.0",
     "jest": "^28.1.3",
     "jest-expect-message": "^1.0.2",
-    "npm-run-all": "^4.1.5",
     "puppeteer": "^16.1.1",
     "rollup": "^2.78.0",
     "rollup-plugin-cleanup": "^3.2.1",
