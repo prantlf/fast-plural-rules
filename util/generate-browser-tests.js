@@ -87,31 +87,17 @@ function formatPage (template, contentIndex, content) {
 }
 
 console.log('Deleting existing browser tests...')
-let template
-rm(browserTests, { recursive: true, force: true })
-  .then(() => mkdir(browserTests, { recursive: true }))
-  .then(() => readTemplate())
-  .then(result => {
-    template = result
-    return glob('*.test.js', { cwd: tests })
-  })
-  .then(files => {
-    const scriptIndex = template.indexOf('</head>')
-    files
-      .filter(file => !nonBrowserTests.includes(file))
-      .reduce((promise, file) => {
-        console.log(`Processing test ${file}...`)
-        return promise.then(() =>
-          readTest(file)
-            .then(content => {
-              content = formatPage(template, scriptIndex, content)
-              file = join(browserTests, file.substr(0, file.length - 2) + 'html')
-              return writeFile(file, content.join('\n'))
-            })
-        )
-      }, Promise.resolve())
-  })
-  .catch(error => {
-    console.error(error)
-    process.exitCode = 1
-  })
+await rm(browserTests, { recursive: true, force: true })
+await mkdir(browserTests, { recursive: true })
+const template = await readTemplate()
+const files = await glob('*.test.js', { cwd: tests })
+const scriptIndex = template.indexOf('</head>')
+await Promise.all(files
+  .filter(file => !nonBrowserTests.includes(file))
+  .map(async file => {
+    console.log(`Processing test ${file}...`)
+    let content = await readTest(file)
+    content = formatPage(template, scriptIndex, content)
+    file = join(browserTests, `${file.substring(0, file.length - 2)}html`)
+    await writeFile(file, content.join('\n'))
+  }))

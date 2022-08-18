@@ -10,7 +10,6 @@ async function writePluralRulesBrowserJavaScript (pluralRules) {
   const fileName = join(__dirname, '../test/plural-rule-definitions.browser.js')
   console.log('Writing plural rule description as browser JavaScript...')
   await writeFile(fileName, `var pluralRuleDefinitions = ${pluralRules}`)
-  return pluralRules
 }
 
 async function writePluralRulesJavaScript (pluralRules) {
@@ -20,11 +19,7 @@ async function writePluralRulesJavaScript (pluralRules) {
 }
 
 console.log('Reading plural rule description as Markdown...')
-readPluralRulesFromDescription()
-  .then(pluralRules => JSON.stringify(pluralRules, undefined, 2))
-  .then(writePluralRulesBrowserJavaScript)
-  .then(writePluralRulesJavaScript)
-  .catch(error => {
-    console.error(error)
-    process.exitCode = 1
-  })
+const pluralRules = await readPluralRulesFromDescription()
+const pluralRulesContent = JSON.stringify(pluralRules, undefined, 2)
+await writePluralRulesBrowserJavaScript(pluralRulesContent)
+await writePluralRulesJavaScript(pluralRulesContent)
