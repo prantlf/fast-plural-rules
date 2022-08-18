@@ -42,8 +42,7 @@ export default [
     output: {
       file: 'test/cardinals.umd.js',
       format: 'umd',
-      name: 'fastPluralData',
-      sourcemap: true
+      name: 'fastPluralData'
     },
     plugins: [cleanup()]
   }
