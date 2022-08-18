@@ -65,7 +65,8 @@ Alternatively, you can use objects with plural form names as localizable message
 Language packs usually contain localized expressions, which are looked up by their keys. If an expression contains a parameter, for example a number placeholder "{fileCount}", only one text message is not enough to cover all grammar rules for different cardinals, which could occur in the parameter value. If expressions, which cover all grammar rules, are stored in an array, the function [`getPluralFormForCardinalByLocale`](./API.md#getpluralformforcardinalbylocale) will return the index of the right expression in the array, provided with the target locale and the cardinal value.
 
 ```js
-const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
+import { getPluralFormForCardinalByLocale } from 'fast-plural-rules'
+
 let locale
 
 localizePluralMessage('en', 'invalidFileCount', 1)
@@ -122,7 +123,8 @@ See the function [`getPluralFormForCardinalByLocale`](./API.md#getpluralformforc
 Alternatively, you can use [`getPluralFormNameForCardinalByLocale`](./API.md#getpluralformnameforcardinalbylocale), which returns the right plural form name instead of the plural form index. For example:
 
 ```js
-const { getPluralFormNameForCardinalByLocale } = require('fast-plural-rules')
+import { getPluralFormNameForCardinalByLocale } from 'fast-plural-rules'
+
 let locale
 
 localizePluralMessage('en', 'invalidFileCount', 1)
@@ -179,7 +181,7 @@ See the function [`getPluralFormNameForCardinalByLocale`](./API.md#getpluralform
 This scenario implements a similar interface for the localized message lookup like the previous [getting a localized message in the right plural form](#get-a-localized-message-in-the-right-plural-form). As a difference, it demonstrates how to obtain the plural rule function and use it multiple times without always carrying the locale around.
 
 ```js
-const { getPluralRuleForCardinalsByLocale } = require('fast-plural-rules')
+import { getPluralRuleForCardinalsByLocale } from 'fast-plural-rules'
 
 setLocale('en')
 
@@ -246,7 +248,7 @@ See the function [getPluralRuleForCardinalsByLocale](./API.md#getpluralruleforca
 Alternatively, you can use [`getPluralRuleForNamedFormsForCardinalsByLocale`](./API.md#getpluralrulefornamedformsforcardinalsbylocale), which returns a function for computing plural form names instead of plural form index. For example:
 
 ```js
-const { getPluralRuleForNamedFormsForCardinalsByLocale } = require('fast-plural-rules')
+import { getPluralRuleForNamedFormsForCardinalsByLocale } from 'fast-plural-rules'
 
 setLocale('en')
 

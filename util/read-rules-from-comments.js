@@ -1,8 +1,10 @@
-'use strict'
+import { readFile } from 'fs/promises'
+import { join } from 'path'
+import parsePluralRule from './parse-plural-rule.js'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
-const { readFile } = require('fs-extra')
-const { join } = require('path')
-const parsePluralRule = require('./parse-plural-rule')
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 function readPluralRulesFromComments () {
   return readInputFile().then(collectPluralRules)
@@ -10,7 +12,7 @@ function readPluralRulesFromComments () {
 
 function readInputFile () {
   const fileName = join(__dirname, '../src/cardinals.js')
-  return readFile(fileName, { encoding: 'utf-8' })
+  return readFile(fileName, 'utf8')
     .then(content => content.split(/\r?\n/))
 }
 
@@ -37,4 +39,4 @@ function collectPluralRules (lines) {
   return pluralRules
 }
 
-module.exports = readPluralRulesFromComments
+export default readPluralRulesFromComments

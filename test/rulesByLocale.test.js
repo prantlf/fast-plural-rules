@@ -1,7 +1,7 @@
 /* global it, expect */
 
-import cardinals from '../src/cardinals'
-import descriptions from './plural-rule-definitions.json'
+import cardinals from '../src/cardinals.js'
+import descriptions from './plural-rule-definitions.js'
 
 const { rules, rulesByLocale } = cardinals
 const documentedLocales = getDocumentedLocales()

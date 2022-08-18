@@ -1,6 +1,6 @@
 /* global it, expect */
 
-import { getPluralRuleForNamedFormsForCardinalsByIndex } from '../src/index'
+import { getPluralRuleForNamedFormsForCardinalsByIndex } from '../src/index.js'
 
 it('is exported as a function', () => {
   expect(typeof getPluralRuleForNamedFormsForCardinalsByIndex === 'function').toBeTruthy()

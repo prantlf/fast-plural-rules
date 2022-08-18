@@ -30,7 +30,7 @@ If you are looking for a library compiling and executing the declarative [CLDR p
 ## Synopsis
 
 ```js
-const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
+import { getPluralFormForCardinalByLocale } from 'fast-plural-rules'
 
 // Returns index of the plural form for the specified locale and cardinal.
 getPluralFormForCardinalByLocale('en', 1) // Returns 0; "1 file"
@@ -105,7 +105,7 @@ $ yarn add fast-plural-rules
 Functions are exposed as named exports, for example:
 
 ```js
-const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
+import { getPluralFormForCardinalByLocale } from 'fast-plural-rules'
 ```
 
 You can read more about the [module loading](./docs/API.md#loading) in other environments, like with ES6 or in web browsers. [Usage scenarios](./docs/usage.md#usage-scenarios) demonstrate applications of this library in typical real-world situations. [Design concepts](./docs/design.md#design-concepts) explain the approach to the correct internationalization of messages with cardinals taken by this library. Translators will read about [plural rules for supported languages](./docs/languages.md#supported-languages) to be able to write the right plural forms to language packs. Finally, the [API reference](./docs/API.md#api-reference) lists all functions with a description of their functionality.

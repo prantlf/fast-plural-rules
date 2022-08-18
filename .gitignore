@@ -5,5 +5,5 @@ node_modules
 src/data.js
 test/browser
 test/cardinals.umd.js
-test/plural-rule-definitions.js*
+test/plural-rule-definitions*
 test/typings.test.js

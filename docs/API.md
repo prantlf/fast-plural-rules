@@ -23,12 +23,10 @@ Load the main module in an application using CommonJS modules:
 const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
 ```
 
-Load the main module in an application using ES6 modules:
+Load the main module in an application using ES modules:
 
 ```js
-import {
-  getPluralFormForCardinalByLocale
-} from './node_modules/fast-plural-rules/src/index.js'
+import { getPluralFormForCardinalByLocale } from 'fast-plural-rules'
 ```
 
 Load the main module in the browser with plain JavaScript:
@@ -42,7 +40,19 @@ Load the main module in the browser with plain JavaScript:
 </script>
 ```
 
-You can also load a specific version from CDN, for example: https://unpkg.com/fast-plural-rules@1.0.0/dist/index.umd.min.js.
+Load the main module in the browser with AMD:
+
+```html
+<script src="https://unpkg.com/alameda@1.4.0/alameda.js"></script>
+<script>
+  require(
+    ['./node_modules/fast-plural-rules/dist/index.umd.min.js'],
+    ({ getPluralFormForCardinalByLocale }) => {
+    })
+</script>
+```
+
+You can also load a specific version from CDN, for example: https://unpkg.com/fast-plural-rules@2.0.0/dist/index.umd.min.js.
 
 ## Functions
 
@@ -62,7 +72,7 @@ Returns an index of the plural form using the specified plural rule `index` and 
 * `count` - a cardinal representing an item count; an integer >= 0
 
 ```js
-const { getPluralFormForCardinalByIndex } = require('fast-plural-rules')
+import { getPluralFormForCardinalByIndex } from 'fast-plural-rules'
 
 getPluralFormForCardinalByIndex(1, 5)
 // Returns 1, which is a second plural form (plural) in Germanic languages.
@@ -80,7 +90,7 @@ Returns a name of the plural form using the specified plural rule `index` and th
 * `count` - a cardinal representing an item count; an integer >= 0
 
 ```js
-const { getPluralFormNameForCardinalByIndex } = require('fast-plural-rules')
+import { getPluralFormNameForCardinalByIndex } from 'fast-plural-rules'
 
 getPluralFormNameForCardinalByIndex(1, 5)
 // Returns "other", which is a second plural form (plural) in Germanic languages.
@@ -98,7 +108,7 @@ Returns an index of the plural form using the specified `locale` and the specifi
 * `count` - a cardinal representing an item count; an integer >= 0
 
 ```js
-const { getPluralFormForCardinalByLocale } = require('fast-plural-rules')
+import { getPluralFormForCardinalByLocale } from 'fast-plural-rules'
 
 getPluralFormForCardinalByLocale('en', 5)
 // Returns 1, which is a second plural form (plural) in Germanic languages.
@@ -118,7 +128,7 @@ Returns a name of the plural form using the specified `locale` and the specified
 * `count` - a cardinal representing an item count; an integer >= 0
 
 ```js
-const { getPluralFormNameForCardinalByLocale } = require('fast-plural-rules')
+import { getPluralFormNameForCardinalByLocale } from 'fast-plural-rules'
 
 getPluralFormNameForCardinalByLocale('en', 5)
 // Returns "other", which is a second plural form (plural) in Germanic languages.
@@ -137,7 +147,7 @@ Returns an plural form rule function for the specified plural rule `index`. The 
 * `index` - one of [supported plural rule indexes](./languages.md#supported-languages)
 
 ```js
-const { getPluralRuleForCardinalsByIndex } = require('fast-plural-rules')
+import { getPluralRuleForCardinalsByIndex } from 'fast-plural-rules'
 
 const pluralRule = getPluralRuleForCardinalsByIndex(1)
 // Returns plural rule #1 - function handling Germanic languages.
@@ -157,7 +167,7 @@ Returns an plural form rule function for the specified plural rule `index`. The 
 * `index` - one of [supported plural rule indexes](./languages.md#supported-languages)
 
 ```js
-const { getPluralRuleForNamedFormsForCardinalsByIndex } = require('fast-plural-rules')
+import { getPluralRuleForNamedFormsForCardinalsByIndex } from 'fast-plural-rules'
 
 const pluralRule = getPluralRuleForNamedFormsForCardinalsByIndex(1)
 // Returns plural rule #1 - function handling Germanic languages.
@@ -177,7 +187,7 @@ Returns an plural form rule function for the specified `locale`. The function ca
 * `locale` - one of [supported language locales](./languages.md#supported-languages)
 
 ```js
-const { getPluralRuleForCardinalsByLocale } = require('fast-plural-rules')
+import { getPluralRuleForCardinalsByLocale } from 'fast-plural-rules'
 
 const pluralRule = getPluralRuleForCardinalsByLocale('en')
 // Returns plural rule #1 - function handling Germanic languages.
@@ -199,7 +209,7 @@ Returns an plural form rule function for the specified `locale`. The function ca
 * `locale` - one of [supported language locales](./languages.md#supported-languages)
 
 ```js
-const { getPluralRuleForNamedFormsForCardinalsByLocale } = require('fast-plural-rules')
+import { getPluralRuleForNamedFormsForCardinalsByLocale } from 'fast-plural-rules'
 
 const pluralRule = getPluralRuleForNamedFormsForCardinalsByLocale('en')
 // Returns plural rule #1 - function handling Germanic languages.

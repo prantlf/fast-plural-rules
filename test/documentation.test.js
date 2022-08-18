@@ -1,7 +1,7 @@
 /* global it, expect */
 
-import readPluralRulesFromComments from '../util/read-rules-from-comments'
-import descriptions from './plural-rule-definitions.json'
+import readPluralRulesFromComments from '../util/read-rules-from-comments.js'
+import descriptions from './plural-rule-definitions.js'
 
 it('markdown description matches code comments', () => {
   return readPluralRulesFromComments()

@@ -1,5 +1,3 @@
-'use strict'
-
 function parsePluralRule (name, ruleLines) {
   const { items: families, nextIndex: afterFamilies } = parseNamedList(ruleLines, 'Families')
   const { items: locales, nextIndex: afterLocales } = parseNamedList(ruleLines, 'Locales', afterFamilies)
@@ -68,4 +66,4 @@ function parsePluralForms (ruleLines, startIndex = 0) {
   }
 }
 
-module.exports = parsePluralRule
+export default parsePluralRule

@@ -1,6 +1,4 @@
-'use strict'
-
-import cardinals from './cardinals'
+import cardinals from './cardinals.js'
 
 const { rules, rulesByLocale, formsByIndex } = cardinals
 

@@ -1,10 +1,14 @@
 /* global beforeAll, afterAll, it, expect */
 
-const { join } = require('path')
-const { readdirSync } = require('fs')
-const connect = require('connect')
-const serve = require('serve-static')
-const puppeteer = require('puppeteer')
+import { join } from 'path'
+import { readdir } from 'fs/promises'
+import connect from 'connect'
+import serve from 'serve-static'
+import puppeteer from 'puppeteer'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const port = 8073
 
@@ -45,7 +49,7 @@ afterAll(done => {
     .then(() => server.close(done))
 })
 
-const tests = readdirSync(join(__dirname, 'browser'))
+const tests = await readdir(join(__dirname, 'browser'))
 for (const test of tests) {
   it(`Execute ${test}`, done => {
     let result

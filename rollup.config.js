@@ -1,67 +1,59 @@
-import { babel } from '@rollup/plugin-babel'
 import cleanup from 'rollup-plugin-cleanup'
-import { terser } from 'rollup-plugin-terser'
+import { minify } from 'rollup-plugin-swc-minify'
 
 export default [
   {
     input: 'src/index.js',
-    output: {
-      file: 'dist/index.js',
-      format: 'cjs'
-    },
-    plugins: [
-      babel({
-        exclude: 'node_modules/**',
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: {
-                node: '6'
-              }
-            }
-          ]
-        ]
-      }),
-      cleanup()
-    ]
-  },
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'dist/index.umd.js',
-      format: 'umd',
-      name: 'fastPluralRules',
-      sourcemap: true
-    },
-    plugins: [
-      babel({ exclude: 'node_modules/**' }),
-      cleanup()
-    ]
-  },
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'dist/index.umd.min.js',
-      format: 'umd',
-      name: 'fastPluralRules',
-      sourcemap: true
-    },
-    plugins: [
-      babel({ exclude: 'node_modules/**' }),
-      terser()
-    ]
+    output: [
+      {
+        file: 'dist/index.cjs',
+        format: 'cjs',
+        sourcemap: true
+      },
+      {
+        file: 'dist/index.mjs',
+        format: 'es',
+        sourcemap: true
+      },
+      {
+        file: 'dist/index.min.mjs',
+        format: 'es',
+        sourcemap: true,
+        plugins: [minify()]
+      },
+      {
+        file: 'dist/index.umd.js',
+        format: 'umd',
+        name: 'fastPluralRules',
+        sourcemap: true
+      },
+      {
+        file: 'dist/index.umd.min.js',
+        format: 'umd',
+        name: 'fastPluralRules',
+        sourcemap: true,
+        plugins: [minify()]
+      }
+    ],
+    plugins: [cleanup()]
   },
   {
     input: 'src/cardinals.js',
-    output: {
-      file: 'test/cardinals.umd.js',
-      format: 'umd',
-      name: 'fastPluralRules'
-    },
-    plugins: [
-      babel({ exclude: 'node_modules/**' }),
-      cleanup()
-    ]
+    output: [
+      {
+        file: 'test/cardinals.umd.js',
+        format: 'umd',
+        name: 'fastPluralRules',
+        sourcemap: true
+      },
+      {
+        file: 'test/cardinals.umd.min.js',
+        format: 'umd',
+        name: 'fastPluralRules',
+        sourcemap: true,
+        plugins: [minify()]
+      }
+    ],
+    plugins: [cleanup()]
   }
 ]

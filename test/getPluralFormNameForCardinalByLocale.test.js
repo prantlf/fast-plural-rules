@@ -1,6 +1,6 @@
 /* global it, expect */
 
-import { getPluralFormNameForCardinalByLocale } from '../src/index'
+import { getPluralFormNameForCardinalByLocale } from '../src/index.js'
 
 it('is exported as a function', () => {
   expect(typeof getPluralFormNameForCardinalByLocale === 'function').toBeTruthy()
