@@ -234,9 +234,9 @@ Returns an array of [locales supported by this library]](./languages.md#supporte
 ```js
 import { getSupportedLocales } from 'fast-plural-rules'
 
-const supportedLanguages = getSupportedLocales()
+const supportedLocales = getSupportedLocales()
 
-console.log(supportedLanguages.length, supportedLanguages.includes['cs])
+console.log(supportedLocales.length, supportedLocales.includes['cs'))
 // Prints "144 true".
 ```
 
@@ -253,7 +253,7 @@ Returns the count of plural forms needed to cover the specified `locale`. [Index
 ```js
 import { getPluralFormCountForLocale } from 'fast-plural-rules'
 
-getPluralFormCountForLocale(cs)
+getPluralFormCountForLocale('cs')
 // Returns 3. (0 - one, 1 - few, 2 - other)
 ```
 
@@ -270,7 +270,7 @@ Returns the plural forms needed to cover the specified `locale`. [Plural form na
 ```js
 import { getPluralFormNamesForLocale } from 'fast-plural-rules'
 
-getPluralFormNamesForLocale(cs)
+getPluralFormNamesForLocale('cs')
 // Returns ["one", "few", "other"].
 ```
 
