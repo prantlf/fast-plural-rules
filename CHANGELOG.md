@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/prantlf/fast-plural-rules/compare/v2.0.1...v2.0.2) (2022-08-18)
+
+
+### Bug Fixes
+
+* Fix packaging TypeScript types ([6059635](https://github.com/prantlf/fast-plural-rules/commit/6059635a5be04a396ceea68c797c7abd044bcebf))
+
 ## [2.0.1](https://github.com/prantlf/fast-plural-rules/compare/v2.0.0...v2.0.1) (2022-08-18)
 
 ### Bug Fixes
