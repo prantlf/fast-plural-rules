@@ -39,21 +39,12 @@ export default [
   },
   {
     input: 'src/cardinals.js',
-    output: [
-      {
-        file: 'test/cardinals.umd.js',
-        format: 'umd',
-        name: 'fastPluralRules',
-        sourcemap: true
-      },
-      {
-        file: 'test/cardinals.umd.min.js',
-        format: 'umd',
-        name: 'fastPluralRules',
-        sourcemap: true,
-        plugins: [minify()]
-      }
-    ],
+    output: {
+      file: 'test/cardinals.umd.js',
+      format: 'umd',
+      name: 'fastPluralData',
+      sourcemap: true
+    },
     plugins: [cleanup()]
   }
 ]

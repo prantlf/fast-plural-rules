@@ -14,6 +14,9 @@ This library contains pure functions to get [plural forms](./design.md#plural-fo
   - [getPluralRuleForNamedFormsForCardinalsByLocale](#getpluralrulefornamedformsforcardinalsbylocale)
   - [getPluralRuleForCardinalsByIndex](#getpluralruleforcardinalsbyindex)
   - [getPluralRuleForNamedFormsForCardinalsByIndex](#getpluralrulefornamedformsforcardinalsbyindex)
+  - [getSupportedLocales](#getsupportedlocales)
+  - [getPluralFormCountForLocale](#getpluralformcountforlocale)
+  - [getPluralFormNamesForLocale](#getpluralformnamesforlocale)
 
 ## Loading
 
@@ -216,6 +219,59 @@ const pluralRule = getPluralRuleForNamedFormsForCardinalsByLocale('en')
 
 pluralRule(5)
 // Returns "other", which is a second plural form (plural) in Germanic languages.
+```
+
+The [locale](./design.md#locales) is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.
+
+### getSupportedLocales
+
+```
+getSupportedLocales(): string[]
+```
+
+Returns an array of [locales supported by this library]](./languages.md#supported-languages). You can use it to check programmatically if your locale is suppored. The `getPluralFormNamesForLocale` might be more efficient, though.
+
+```js
+import { getSupportedLocales } from 'fast-plural-rules'
+
+const supportedLanguages = getSupportedLocales()
+
+console.log(supportedLanguages.length, supportedLanguages.includes['cs])
+// Prints "144 true".
+```
+
+The [locale](./design.md#locales) is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.
+
+### getPluralFormCountForLocale
+
+```
+getPluralFormCountForLocale(locale: string): number
+```
+
+Returns the count of plural forms needed to cover the specified `locale`. [Index of plural forms](./languages.md#supported-languages) returned by `getPluralFormForCardinalByIndex` and other methods will be greater or equal to zero and less than the returned count.
+
+```js
+import { getPluralFormCountForLocale } from 'fast-plural-rules'
+
+getPluralFormCountForLocale(cs)
+// Returns 3. (0 - one, 1 - few, 2 - other)
+```
+
+The [locale](./design.md#locales) is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.
+
+### getPluralFormNamesForLocale
+
+```
+getPluralFormNamesForLocale(locale: string): string[]
+```
+
+Returns the plural forms needed to cover the specified `locale`. [Plural form names](./languages.md#supported-languages) returned by `getPluralFormNameForCardinalByLocale` and other methods will be always included in the returned returned array.
+
+```js
+import { getPluralFormNamesForLocale } from 'fast-plural-rules'
+
+getPluralFormNamesForLocale(cs)
+// Returns ["one", "few", "other"].
 ```
 
 The [locale](./design.md#locales) is normalized for the plural rule lookup by converting it to lower-case and using a hyphen as a separator, if the country is present and separated by an underscore.

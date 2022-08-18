@@ -33,7 +33,7 @@ Translators need to know, how many plural forms the target language needs, to be
 }
 ```
 
-Have a look at the [list of plural rules and number of plural forms for locales supported by this library](./languages.md#supported-languages).
+Have a look at the [list of plural rules and number of plural forms for locales supported by this library](./languages.md#supported-languages). The proper count of plural forms can be checked programmatically by [`getPluralFormCountForLocale`](./API.md#getpluralformcountforlocale).
 
 ### Language pack with plural form names
 
@@ -59,6 +59,8 @@ Alternatively, you can use objects with plural form names as localizable message
   }
 }
 ```
+
+Have a look at the [list of plural rules and plural form names for locales supported by this library](./languages.md#supported-languages). The proper plural form names covering a particular `locale` can be checked programmatically by [`getPluralFormNamesForLocale`](./API.md#getpluralformnamesforlocale).
 
 ## Get a localized message in the right plural form
 

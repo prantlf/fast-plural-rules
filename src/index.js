@@ -77,9 +77,29 @@ function getPluralFormNameForCardinalByIndex (index, count) {
   return rule(count)
 }
 
+let supportedLocales
+
+function getSupportedLocales() {
+  if (!supportedLocales) supportedLocales = Object.keys(rulesByLocale)
+  return supportedLocales
+}
+
+function getPluralFormCountForLocale(locale) {
+  const index = rulesByLocale[locale]
+  if (index === undefined) return
+  return formsByIndex[index].length
+}
+
+function getPluralFormNamesForLocale(locale) {
+  const index = rulesByLocale[locale]
+  if (index === undefined) return
+  return formsByIndex[index]
+}
+
 export {
   getPluralRuleForCardinalsByLocale, getPluralRuleForNamedFormsForCardinalsByLocale,
   getPluralFormForCardinalByLocale, getPluralFormNameForCardinalByLocale,
   getPluralRuleForCardinalsByIndex, getPluralRuleForNamedFormsForCardinalsByIndex,
-  getPluralFormForCardinalByIndex, getPluralFormNameForCardinalByIndex
+  getPluralFormForCardinalByIndex, getPluralFormNameForCardinalByIndex,
+  getSupportedLocales, getPluralFormCountForLocale, getPluralFormNamesForLocale
 }

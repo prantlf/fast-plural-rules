@@ -32,22 +32,28 @@ let counter = 0
 
 function formatModuleImport (input) {
   const match = importModuleExpression.exec(input)
-  if (!match) {
+  let functionCodeLine
+  let functionScriptElement
+  if (match) {
+    let varName, scriptName
+    if (match[1] === 'cardinals') {
+      varName = 'fastPluralData'
+      scriptName = '../cardinals.umd.js'
+    } else {
+      varName = 'fastPluralRules'
+      scriptName = counter++ % 2 === 0 ? '../../dist/index.umd.min.js' : '../../dist/index.umd.js'
+    }
+    functionCodeLine = input.replace(importModuleExpression, `const $1 = window.${varName}`)
+    functionScriptElement = [`<script src="${scriptName}"></script>`]
+  }
+  return { functionCodeLine, functionScriptElement }
+}
+
+function formatMainModuleImport (input) {
+  const { functionCodeLine, functionScriptElement } = formatModuleImport(input)
+  if (!functionCodeLine) {
     throw new Error('Statement requiring the code module not found.')
   }
-  const functionCodeLine = input.replace(importModuleExpression,
-    'const $1 = window[\'fastPluralRules\']')
-  let scriptName
-  if (match[1] === 'cardinals') {
-    scriptName = '../cardinals.umd.js'
-  } else {
-    scriptName = counter++ % 2 === 0
-      ? '../../dist/index.umd.min.js'
-      : '../../dist/index.umd.js'
-  }
-  const functionScriptElement = [
-    '<script src="' + scriptName + '"></script>'
-  ]
   return { functionCodeLine, functionScriptElement }
 }
 
@@ -56,17 +62,16 @@ function formatDataImport (input) {
   let dataCodeLine
   let dataScriptElement
   if (match) {
-    dataCodeLine = input.replace(importDataExpression,
-      'const descriptions = window[\'pluralRuleDefinitions\']')
-    dataScriptElement = [
-      '<script src="../plural-rule-definitions.browser.js"></script>'
-    ]
+    dataCodeLine = input.replace(importDataExpression, 'const descriptions = window[\'pluralRuleDefinitions\']')
+    dataScriptElement = ['<script src="../plural-rule-definitions.browser.js"></script>']
+  } else {
+    ({ functionCodeLine: dataCodeLine, functionScriptElement: dataScriptElement } = formatModuleImport(input))
   }
   return { dataCodeLine, dataScriptElement }
 }
 
 function formatPage (template, contentIndex, content) {
-  const { functionCodeLine, functionScriptElement } = formatModuleImport(content[0])
+  const { functionCodeLine, functionScriptElement } = formatMainModuleImport(content[0])
   const { dataCodeLine, dataScriptElement } = formatDataImport(content[1])
   content[0] = functionCodeLine
   if (dataCodeLine) {

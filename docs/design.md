@@ -51,9 +51,9 @@ Czech expressions with the related plural form:
   "5 vadných souborů" // 2 (other): plural for 5 and more items
 ```
 
-Plural forms are indexed by integers. Zero is assigned to singular or zero (for item count 1 or zero) and indexes from one to five to other plural forms. The maximum index depends on the [language](./languages.md#supported-languages). All plural forms of an expression are usually stored with a lookup key [*language packs*](#language-packs).
+Plural forms are indexed by integers. Zero is assigned to singular or zero (for item count 1 or zero) and indexes from one to five to other plural forms. The maximum index depends on the [language](./languages.md#supported-languages). All plural forms of an expression are usually stored with a lookup key [*language packs*](#language-packs). The count of plural forms for a particular `locale` can be obtained by [`getPluralFormCountForLocale`](./API.md#getpluralformcountforlocale).
 
-Alternatively to the numeric index, the plural form can be referred to by one of the six [CLDR plural forms]: `zero`, `one`, `two`, `few`, `many` and `other`.
+Alternatively to the numeric index, the plural form can be referred to by one of the six [CLDR plural forms]: `zero`, `one`, `two`, `few`, `many` and `other`. The list of plural form names covering a particular `locale` can be obtained by [`getPluralFormNamesForLocale`](./API.md#getpluralformnamesforlocale).
 
 ## Plural Rules
 
@@ -84,6 +84,8 @@ The locale is an identifier referring to a *language* and if there is a dialect 
 Tha language is specified using a two-letter code from [ISO 369](https://en.wikipedia.org/wiki/ISO_639). The optional country is specified using a two-letter code from [ISO 3166](https://cs.wikipedia.org/wiki/ISO_3166-1). If there is no two-letter code available, three letter codes may be used.
 
 The locale is handled case-insensitively. Before it is used for the plural rule lookup, it isd "normalized". It is converted to lower-case and if it consists of both language and country paths separated by an underscore, the separator is replaced by a hyphen. For example: `pt_BR ==> pt-br`.
+
+The list of supported locales can be obtained by [`getSupportedLocales`](./API.md#getsupportedlocales).
 
 ## Language Packs
 
