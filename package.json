@@ -49,12 +49,6 @@
     "test": "run-s lint check check:browser",
     "start": "python3 -m http.server"
   },
-  "standard": {
-    "ignore": [
-      "dist",
-      "src/data.js"
-    ]
-  },
   "jest": {
     "setupFilesAfterEnv": [
       "jest-expect-message"
