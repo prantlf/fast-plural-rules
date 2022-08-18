@@ -3,8 +3,7 @@
   "type": "module",
   "devDependencies": {
     "benchmark": "^2.1.4",
-    "cldrpluralruleparser": "^1.4.0",
     "fast-plural-rules": "link:..",
-    "plural-rules": "^1.0.2"
+    "plural-rules": "^2.0.0"
   }
 }

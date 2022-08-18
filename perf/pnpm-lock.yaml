@@ -2,15 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   benchmark: ^2.1.4
-  cldrpluralruleparser: ^1.4.0
   fast-plural-rules: link:..
-  plural-rules: ^1.0.2
+  plural-rules: ^2.0.0
 
 devDependencies:
   benchmark: 2.1.4
-  cldrpluralruleparser: 1.4.0
   fast-plural-rules: link:..
-  plural-rules: 1.0.2
+  plural-rules: 2.0.0
 
 packages:
 
@@ -34,8 +32,10 @@ packages:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
     dev: true
 
-  /plural-rules/1.0.2:
-    resolution: {integrity: sha512-OjsWxT7NQz7huYODhEisgZdq2D5Fo056HZSdisvUSSBpTuY0G12/G9izkgExtNBsNl8UdASjtcq4uJezNInmdQ==}
-    engines: {node: '>=14'}
+  /plural-rules/2.0.0:
+    resolution: {integrity: sha512-F2HwlKCJjIGYkwcXH009qoXahA/sKfbaTbkTHd3vMbw1NObyvd+jpbQjauj3r+2cm9Q3PG8uHtfIamJQ/L9bXQ==}
+    engines: {node: '>=14.8'}
     hasBin: true
+    dependencies:
+      cldrpluralruleparser: 1.4.0
     dev: true
